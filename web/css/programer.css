@@ -1,0 +1,10 @@
+#pregunta2result1, #pregunta2result2 {
+	font-weight:700;
+	font-size:1.3em;
+}
+
+.btn-sample.dis {
+  background-color: #8ea7b5;
+  border-color: #829ba9;
+  cursor: context-menu;
+}

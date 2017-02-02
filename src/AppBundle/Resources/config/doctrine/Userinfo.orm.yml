@@ -1,0 +1,26 @@
+AppBundle\Entity\Userinfo:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UserinfoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userid:
+            type: integer
+            unique: true
+        especialidad:
+            type: string
+            length: '255'
+        trabajo:
+            type: string
+            length: '255'
+        provincia:
+            type: string
+            length: '255'
+        numero:
+            type: integer
+    lifecycleCallbacks: {  }

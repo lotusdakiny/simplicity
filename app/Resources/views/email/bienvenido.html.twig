@@ -1,0 +1,30 @@
+{% extends '/email/emailbase.html.twig' %}
+
+{% block title %}Bienvenido al proyecto Simplicity{% endblock %}
+{% block body %}
+
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><spam>Estimado Experto/a. {{ apellido }},</spam></p>
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><spam>Volvemos a ponernos en contacto con usted para seguir contando con su colaboraci&oacute;n en el proyecto Simplicity. Como sabe, una parte fundamental de este proyecto consiste en contestar a dos cuestionarios:</spam></p>
+		
+		<ul>
+			<li style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><strong>Cuantitativo:</strong> nos permitir&aacute; <strong>valorar los beneficios derivados de la simplificaci&oacute;n del tratamiento con los actuales AADs en la pr&aacute;ctica cl&iacute;nica habitual.</strong> <u>El cuestionario cuantitativo estar&aacute; disponible del 23 de enero al 05 de febrero.</u><br><br></li>
+			<li style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'>
+				<strong>Cualitativo:</strong> nos permitir&aacute; obtener <strong>las conclusiones sobre el beneficio que aporta la simplificaci&oacute;n del tratamiento con los actuales AADs en torno a cinco indicadores.</strong> Se trata de un cuestionario tipo Delphi en el que los Expertos reflejar&aacute;n su grado de acuerdo o de desacuerdo con las preguntas planteadas. Se desarrolla en dos rondas de respuesta: <br><br>
+				<ul>
+					<li style='font-family:"Arial","sans-serif";'>La <u>primera ronda</u> contestar&aacute; a las preguntas mostrando el grado de acuerdo del 1 al 5 (siendo 1 totalmente desacuerdo y 5 totalmente de acuerdo). <u>Recibir&aacute; un correo indicando cuando est&eacute; disponible.</u> Para contestar a esta ronda dispondr&aacute; de 1 semana.<br><br></li>
+					<li style='font-family:"Arial","sans-serif";'>La <u>segunda ronda</u> se contestar&aacute; a las preguntas conociendo los resultados de la primera ronda y ser&aacute;n preguntas m&aacute;s concisas en aras conseguir un mayor grado de consenso. <u>Recibir&aacute; un correo cuando est&eacute; disponible.</u> Para contestar a esta ronda dispondr&aacute; de 1 semana.<br><br></li>
+				</ul>
+			</li>
+			<li style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'>Finalmente se proceder&aacute; al an&aacute;lisis de los resultados obtenidos y se presentar&aacute;n en la <strong>Reuni&oacute;n Nacional.</strong></li>
+		</ul>
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'>Ambos cuestionarios estar&aacute;n disponibles en la web del proyecto Simplicity ( <a href="http://proyectosimplicity.es">proyectosimplicity.es</a> ). <u>Los datos obtenidos de sus respuestas ser&aacute;n tratados de forma agregada y an&oacute;nima.</u> Sus credenciales de acceso son: </p>
+		
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><strong>Usuario:</strong> {{ user }}<br><strong>Contrase&ntilde;a:</strong> {{ password }}</p>
+		
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'>Si tiene cualquier duda relacionada con el procedimiento para responder de estos cuestionarios, por favor, p&oacute;ngase en contacto con:</p>
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Laura Ruiz</strong>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail: <a href="mailto:laura.ruiz@clover-sgm.es">laura.ruiz@clover-sgm.es</a>. 
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tel&eacute;fono: 671 13 06 51
+		</p>
+
+{% endblock %}

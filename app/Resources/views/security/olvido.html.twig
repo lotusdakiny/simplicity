@@ -1,0 +1,31 @@
+{# app/Resources/views/security/olvido.html.twig #}
+{% extends '/security/securitybase.html.twig' %}
+
+{% block body %}
+	{% if wrongemail %}
+		<div class="alert alert-warning alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    		Email <strong>{{ wrongemail }}</strong> no valido
+		</div>
+	{% endif %}
+    <h1 class="text-center">Recuperar contrase&ntilde;a</h1>
+    <form class="form-horizontal form-signin" method="post">
+        <fieldset>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-xs-2 control-label text-right" for="email" style="padding-top:0;"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-envelope fa-stack-1x fa-inverse"></i></span></label>
+                <div class="col-xs-10">
+                    <input id="email" name="email" placeholder="Email" class="form-control input-md" required="" type="email">
+                </div>
+            </div>
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <div class="col-md-12">
+                    <button type="submit" id="button1id" name="button1id" class="btn btn-sample btn-md col-md-9 col-xs-12">Recordar</button>
+                    <a href="login" class="btn btn-danger btn-md col-md-2 pull-right col-xs-12">Cancelar</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+{% endblock %}

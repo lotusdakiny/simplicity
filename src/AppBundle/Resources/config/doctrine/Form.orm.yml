@@ -1,0 +1,287 @@
+AppBundle\Entity\Form:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\FormRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userid:
+            type: integer
+            unique: true
+        p1a:
+            type: integer
+            nullable: true
+        p1b:
+            type: integer
+            nullable: true
+        p1c:
+            type: integer
+            nullable: true
+        p1d:
+            type: integer
+            nullable: true
+        p1e:
+            type: integer
+            nullable: true
+        p1f:
+            type: integer
+            nullable: true
+        p10a:
+            type: string
+            length: '255'
+            nullable: true
+        p10b:
+            type: string
+            length: '255'
+            nullable: true
+        p10c:
+            type: string
+            length: '255'
+            nullable: true
+        p11a:
+            type: integer
+            nullable: true
+        p11b:
+            type: integer
+            nullable: true
+        p11c:
+            type: integer
+            nullable: true
+        p11d:
+            type: integer
+            nullable: true
+        p13a:
+            type: integer
+            nullable: true
+        p13b:
+            type: integer
+            nullable: true
+        p13c:
+            type: integer
+            nullable: true
+        p13d:
+            type: integer
+            nullable: true
+        p13e:
+            type: integer
+            nullable: true
+        p13f:
+            type: integer
+            nullable: true
+        p13g:
+            type: integer
+            nullable: true
+        p13h:
+            type: integer
+            nullable: true
+        p13i:
+            type: integer
+            nullable: true            
+        p17letra:
+            type: string
+            length: '255'
+            nullable: true
+        p17texto:
+            type: string
+            length: '255'
+            nullable: true                                 
+        p18letra:
+            type: string
+            length: '255'
+            nullable: true
+        p18texto:
+            type: string
+            length: '255'
+            nullable: true                               
+        p19p1a:
+            type: integer
+            nullable: true
+        p19p1b:
+            type: integer
+            nullable: true
+        p19p1c:
+            type: integer
+            nullable: true
+        p19p1d:
+            type: integer
+            nullable: true
+        p19p1e:
+            type: integer
+            nullable: true
+        p19p2a:
+            type: integer
+            nullable: true
+        p19p2b:
+            type: integer
+            nullable: true
+        p19p2c:
+            type: integer
+            nullable: true
+        p19p2d:
+            type: integer
+            nullable: true
+        p19p2e:
+            type: integer
+            nullable: true
+        p19p3a:
+            type: integer
+            nullable: true
+        p19p3b:
+            type: integer
+            nullable: true
+        p19p3c:
+            type: integer
+            nullable: true
+        p19p3d:
+            type: integer
+            nullable: true
+        p19p3e:
+            type: integer
+            nullable: true
+        p2a:
+            type: integer
+            nullable: true
+        p2b:
+            type: integer
+            nullable: true
+        p2c:
+            type: integer
+            nullable: true
+        p2ca:
+            type: integer
+            nullable: true
+        p2cb:
+            type: integer
+            nullable: true
+        p2cc:
+            type: integer
+            nullable: true
+        p2cd:
+            type: integer
+            nullable: true
+        p2ce:
+            type: integer
+            nullable: true
+        p2cf:
+            type: integer
+            nullable: true
+        p2cg:
+            type: integer
+            nullable: true
+        p2ch:
+            type: integer
+            nullable: true
+        p2d:
+            type: integer
+            nullable: true
+        p2e:
+            type: integer
+            nullable: true
+        p2texto:
+            type: string
+            length: '255'
+            nullable: true
+        p2texto1:
+            type: string
+            length: '255'
+            nullable: true
+        p21a:
+            type: integer
+            nullable: true
+        p21b:
+            type: integer
+            nullable: true
+        p21c:
+            type: integer
+            nullable: true
+        p21d:
+            type: integer
+            nullable: true
+        p21e:
+            type: integer
+            nullable: true
+        p3a:
+            type: string
+            length: '255'
+        p3b:
+            type: string
+            length: '255'
+        p3c:
+            type: string
+            length: '255'
+        p3d:
+            type: string
+            length: '255'
+        p3e:
+            type: string
+            length: '255'
+        p3f:
+            type: string
+            length: '255'
+        p3g:
+            type: string
+            length: '255'
+        p3h:
+            type: string
+            length: '255'
+        p3i:
+            type: string
+            length: '255'
+        p3j:
+            type: string
+            length: '255'
+        p3k:
+            type: string
+            length: '255'
+        p3l:
+            type: string
+            length: '255'
+        p4:
+            type: string
+            length: '255'
+            nullable: true
+        p5:
+            type: string
+            length: '255'
+            nullable: true
+        p6:
+            type: string
+            length: '255'
+            nullable: true
+        p7:
+            type: string
+            length: '255'
+            nullable: true
+        p8:
+            type: string
+            length: '255'
+            nullable: true
+        p9:
+            type: string
+            length: '255'
+            nullable: true
+        p12:
+            type: string
+            length: '255'
+            nullable: true
+        p14:
+            type: string
+            length: '255'
+            nullable: true
+        p15:
+            type: string
+            length: '255'
+            nullable: true
+        p16:
+            type: string
+            length: '255'
+            nullable: true
+        p20:
+            type: string
+            length: '255'
+            nullable: true
+    lifecycleCallbacks: {  }

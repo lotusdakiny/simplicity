@@ -1,0 +1,38 @@
+AppBundle\Entity\Users:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\UsersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: '255'
+        nombre:
+            type: string
+            length: '255'
+        apellido1:
+            type: string
+            length: '255'
+        apellido2:
+            type: string
+            length: '255'
+            nullable: true
+        email:
+            type: string
+            length: '255'
+        password:
+            type: string
+            length: '255'
+        isactive:
+            type:boolean
+        form1:
+            type:boolean
+        form2:
+            type:boolean
+                        
+    lifecycleCallbacks: {  }

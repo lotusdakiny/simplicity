@@ -1,0 +1,133 @@
+{# app/Resources/views/default/cuantitativo.html.twig #}
+{% extends '/default/cuestionariobase.html.twig' %}
+
+{% block body %}
+	<h2>CUESTIONARIO DELPHI</h2>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab">
+			{{ form_start(form, {'attr': {'class': 'form-horizontal', 'id': 'form1'}}) }}
+		    {{ form_errors(form) }}
+		    <div class="form-block">
+		    
+		    	<!-- Preguntas -->
+		    	{% for titulo in titulos %}
+					<p class="tittle-form"><span class="label simplicity">{{ loop.index }}</span>{{ titulo }}</p>				
+					<div class="form-group">
+						<div class="col-xs-12">
+							<span style="color:red;font-size:0.9em;padding:0 20px;font-weight:600;">Totalmente desacuerdo</span>
+							{% if loop.index == 1 %}
+								{% for var in form.p1 %}
+									<label class="radio-inline" for="form_p1_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p1', 'type': 'radio'}}) }}
+										<label for="form_p1_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 2 %}
+								{% for var in form.p2 %}
+									<label class="radio-inline" for="form_p2_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p2', 'type': 'radio'}}) }}
+										<label for="form_p2_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 3 %}
+								{% for var in form.p3 %}
+									<label class="radio-inline" for="form_p3_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p3', 'type': 'radio'}}) }}
+										<label for="form_p3_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 4 %}
+								{% for var in form.p4 %}
+									<label class="radio-inline" for="form_p4_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p4', 'type': 'radio'}}) }}
+										<label for="form_p4_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 5 %}
+								{% for var in form.p5 %}
+									<label class="radio-inline" for="form_p5_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p5', 'type': 'radio'}}) }}
+										<label for="form_p5_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 6 %}
+								{% for var in form.p6 %}
+									<label class="radio-inline" for="form_p6_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p6', 'type': 'radio'}}) }}
+										<label for="form_p6_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 7 %}
+								{% for var in form.p7 %}
+									<label class="radio-inline" for="form_p7_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p7', 'type': 'radio'}}) }}
+										<label for="form_p7_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 8 %}
+								{% for var in form.p8 %}
+									<label class="radio-inline" for="form_p8_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p8', 'type': 'radio'}}) }}
+										<label for="form_p8_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 9 %}
+								{% for var in form.p9 %}
+									<label class="radio-inline" for="form_p9_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p9', 'type': 'radio'}}) }}
+										<label for="form_p9_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 10 %}
+								{% for var in form.p10 %}
+									<label class="radio-inline" for="form_p10_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p10', 'type': 'radio'}}) }}
+										<label for="form_p10_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}
+							{% elseif loop.index == 11 %}
+								{% for var in form.p11 %}
+									<label class="radio-inline" for="form_p11_{{ loop.index - 1}}">
+										{{ form_widget(var, {'attr': {'name': 'radios-p11', 'type': 'radio'}}) }}
+										<label for="form_p11_{{ loop.index - 1 }}">&nbsp;</label>
+										<span>{{ loop.index }}</span>
+									</label>
+								{% endfor %}																																																																
+							{% endif %}	
+							<span style="color:green;font-size:0.9em;padding:0 20px;font-weight:600;">Totalmente de acuerdo</span>
+						</div>
+					</div>
+				{% endfor %}
+			
+			</div>
+																				
+			<!-- BUTTON -->
+			<div class="form-block button-block">
+				<!-- Button (Double) -->
+				<div class="form-group" style="margin-bottom:0;">
+					<div class="col-xs-12 col-md-8 show-grid">
+						<button type="submit" id="button1id" name="button1id" class="col-xs-12 col-sm-12 btn btn-success btn-lg">Listo!</button>												
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<button type="reset" id="button2id" name="button2id" class="col-xs-12 col-sm-12 btn btn-danger" style="margin-top: 6px;">Borrar formulario</button>
+					</div>
+				</div>
+			</div>
+			{{ form_end(form) }}
+		</div>
+		<div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profile-tab">
+        	<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher videoro sint qui sapiente accusamus tattooed echo park.</p>
+		</div>
+	</div>
+
+{% endblock %}

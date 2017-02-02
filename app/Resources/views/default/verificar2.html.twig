@@ -1,0 +1,14 @@
+{# app/Resources/views/default/verificar.html.twig #}
+{% extends '/default/cuestionariobase.html.twig' %}
+
+{% block body %}
+	<h4 class="text-center">Porfavor, verifica tus datos. Para hacer los cambios tienes que volver</h4>
+	<div>{{ formobject }}</div>
+ <button onclick="goBack()">Volver a correjir los datos</button>
+ <a href="guardar-cualitativo">Guardar</a>
+ <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+{% endblock %}

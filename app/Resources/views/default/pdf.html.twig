@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+    	<h3>Estimado/a Sr./Sra. {{ apellido }},<br>A continuaci&oacute;n puede encontrar un resumen de las contestaciones al cuestionario:</h3>
+    	
+    	<p><strong>1.</strong> {{ titulos.p1 | raw }} 
+    	{% if form.p1a %}  	
+    		</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.</strong> {{ titulos.p1a | raw }} <strong>{{ form.p1a }}</strong></p>	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>B.</strong> {{ titulos.p1b | raw }} <strong>{{ form.p1b }}</strong></p>			   				
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.</strong> {{ titulos.p1c | raw }} <strong>{{ form.p1c }}</strong></p>	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>D.</strong> {{ titulos.p1d | raw }} <strong>{{ form.p1d }}</strong></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>E.</strong> {{ titulos.p1e | raw }} <strong>{{ form.p1e }}</strong></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>F.</strong> {{ titulos.p1f | raw }} <strong>{{ form.p1f }}</strong>
+		{% else %}
+			{{ noaplica | raw }}</p>
+		{% endif %}
+		<p><strong>2.</strong> {{ titulos.p2 | raw }}
+		{% if form.p2a %}			
+			</p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.</strong> {{ titulos.p2a | raw }} <strong>{{ form.p2a }}%</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>B.</strong> {{ titulos.p2b | raw }} <strong>{{ form.p2b }}%</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.</strong> {{ titulos.p2c | raw }} <strong>{{ form.p2c }}%</strong></p>
+			
+			{% if not form.p2c == 0 %}
+			
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.a.</strong> {{ titulos.p2ca | raw }} <strong>{{ form.p2ca }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.b.</strong> {{ titulos.p2cb | raw }} <strong>{{ form.p2cb }}%</strong></p>				
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.c.</strong> {{ titulos.p2cc | raw }} <strong>{{ form.p2cc }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.d.</strong> {{ titulos.p2cd | raw }} <strong>{{ form.p2cd }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.e.</strong> {{ titulos.p2ce | raw }} <strong>{{ form.p2ce }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.f.</strong> {{ titulos.p2cf | raw }} <strong>{{ form.p2cf }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.g.</strong> {{ titulos.p2cg | raw }} <strong>{{ form.p2cg }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.h.</strong> {{ titulos.p2ch | raw }} {{ form.p2texto1 }}: <strong>{{ form.p2ch }}%</strong></p>
+			
+			{% endif %}
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>D.</strong> {{ titulos.p2d | raw }} <strong>{{ form.p2d }}%</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>E.</strong> {{ titulos.p2e | raw }} {{ form.p2texto }}: <strong>{{ form.p2e }}%</strong></p>							
+		
+  		{% else %}
+			{{ noaplica | raw }}</p>
+		{% endif %}
+  		<p><strong>3.</strong> {{ titulos.p3 | raw }}</p>
+	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.</strong> Coinfectados VIH y VHC: <strong>{{ form.p3a }}</strong></p>	
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>B.</strong> Alcoh&oacute;licos: <strong>{{ form.p3b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.</strong> Adictos a drogas i.v: <strong>{{ form.p3c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>D.</strong> Adictos a otras drogas de abuso: <strong>{{ form.p3d }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>E.</strong> Pacientes con enfermedad hep&aacute;tica poco avanzada (F0-F2): <strong>{{ form.p3e }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>F.</strong> Polimedicados: <strong>{{ form.p3f }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>G.</strong> Institucionalizados: <strong>{{ form.p3g }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>H.</strong> Con comorbilidad psiqui&aacute;trica: <strong>{{ form.p3h }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>I.</strong> Edad avanzada (>65 a&ntilde;os): <strong>{{ form.p3i }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>J.</strong> Pacientes sin recursos (indigentes): <strong>{{ form.p3j }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>K.</strong> Trabajadores del sexo: <strong>{{ form.p3k }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>L.</strong> {{ titulos.p3l | raw }} <strong>{{ form.p3l }}</strong></p>
+		
+		<p><strong>4.</strong> {{ titulos.p4 | raw }} <strong>{{ form.p4 }}</strong></p>
+			
+		<p><strong>5.</strong> {{ titulos.p7 | raw }} <strong>{{ form.p7 }}</strong></p>
+			
+		<p><strong>6.</strong> {{ titulos.p8 | raw }} <strong>{{ form.p8 }}</strong></p>
+		
+		<p><strong>7.</strong> {{ titulos.p9 | raw }} <strong>{{ form.p9 }}</strong></p>
+
+		<p><strong>8.</strong> {{ titulos.p10 | raw }}
+		{% if form.p10a %}  	
+    		</p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>8.A.</strong> {{ titulos.p10a | raw }} <strong>{{ form.p10a }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>8.B.</strong> {{ titulos.p10b | raw }} <strong>{{ form.p10b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>8.C.</strong> {{ titulos.p10c | raw }} <strong>{{ form.p10c }}</strong></p>
+		
+		{% else %}
+			{{ noaplica | raw }}</p>
+		{% endif %}		
+		<p><strong>9.</strong> {{ titulos.p11 | raw }}
+		{% if form.p11a %}
+			</p>
+	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.</strong> Pacientes con cirrosis descompensada o en lista de espera para un trasplante hep&aacute;tico: <strong>{{ form.p11a }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>B.</strong> Pacientes con fibrosis avanzada F3-F4 pero sin enfermedad descompensada: <strong>{{ form.p11b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.</strong> Pacientes con fibrosis leve-moderada F0-F1 y F2: <strong>{{ form.p11c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>D.</strong> Pacientes con manifestaciones extrahep&aacute;ticas: <strong>{{ form.p11d }}</strong></p>
+	
+		{% else %}
+			{{ noaplica | raw }}</p>
+		{% endif %}
+	
+		<p><strong>10.</strong> {{ titulos.p12 | raw }} <strong>{{ form.p12 }}</strong></p>
+
+		<p><strong>11.</strong> {{ titulos.p13 | raw }}
+		{% if form.p13a %}
+			</p>
+	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.</strong> {{ titulos.p13a | raw }} <strong>{{ form.p13a }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>B.</strong> {{ titulos.p13b | raw }} <strong>{{ form.p13b }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.</strong> {{ titulos.p13c | raw }} <strong>{{ form.p13c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>D.</strong> {{ titulos.p13d | raw }} <strong>{{ form.p13d }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>E.</strong> {{ titulos.p13e | raw }} <strong>{{ form.p13e }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>F.</strong> {{ titulos.p13f | raw }} <strong>{{ form.p13f }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>G.</strong> {{ titulos.p13g | raw }} <strong>{{ form.p13g }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>H.</strong> {{ titulos.p13h | raw }} <strong>{{ form.p13h }}</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>I.</strong> {{ titulos.p13i | raw }} <strong>{{ form.p13i }}</strong></p>	
+		
+		{% else %}
+			{{ noaplica | raw }}</p>
+		{% endif %}
+		
+		<p><strong>12.</strong> {{ titulos.p14 | raw }} <strong>{{ form.p14 }}</strong></p>
+
+		<p><strong>13.</strong> {{ titulos.p15 | raw }} <strong>{{ form.p15 }}</strong></p>
+
+		<p><strong>14.</strong> {{ titulos.p16 | raw }} <strong>{{ form.p16 }}</strong></p>
+
+		<p><strong>15.</strong> {{ titulos.p17 | raw }} 
+			{% if form.p17texto %}
+				<strong>{{ form.p17letra }}: {{ form.p17texto }}</strong>
+			{% else %}
+				{{ noaplica | raw }}
+			{% endif %}
+		</p>
+		<p><strong>16.</strong> {{ titulos.p18 | raw }} 
+			{% if form.p18texto %}
+				<strong>{{ form.p18letra }}: {{ form.p18texto }}</strong>
+			{% else %}
+				{{ noaplica | raw }}
+			{% endif %}
+	  	
+	  	<p><strong>17.</strong> {{ titulos.p19 | raw }}</p>
+		<p><i>Paciente 1</i></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 1.A.</strong> {{ titulos.p19p1a | raw }} 
+				{% if form.p19p1a %}
+					<strong>{{ form.p19p1a }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 1.B.</strong> {{ titulos.p19p1b | raw }} 
+				{% if form.p19p1b %}
+					<strong>{{ form.p19p1b }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 1.C.</strong> {{ titulos.p19p1c | raw }} 
+				{% if form.p19p1c %}
+					<strong>{{ form.p19p1c }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 1.D.</strong> {{ titulos.p19p1d | raw }} 
+				{% if form.p19p1d %}
+					<strong>{{ form.p19p1d }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 1.E.</strong> {{ titulos.p19p1e | raw }} 
+				{% if form.p19p1e %}
+					<strong>{{ form.p19p1e }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+	
+		<p><strong>Paciente 2</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 2.A.</strong> {{ titulos.p19p2a | raw }} 
+				{% if form.p19p2a %}
+					<strong>{{ form.p19p2a }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 2.B.</strong> {{ titulos.p19p2b | raw }} 
+				{% if form.p19p2b %}
+					<strong>{{ form.p19p2b }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 2.C.</strong> {{ titulos.p19p2c | raw }} 
+				{% if form.p19p2c %}
+					<strong>{{ form.p19p2c }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 2.D.</strong> {{ titulos.p19p2d | raw }} 
+				{% if form.p19p2d %}
+					<strong>{{ form.p19p2d }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 2.E.</strong> {{ titulos.p19p2e | raw }} 
+				{% if form.p19p2e %}
+					<strong>{{ form.p19p2e }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>	
+
+		<p><strong>Paciente 3</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 3.A.</strong> {{ titulos.p19p3a | raw }} 
+				{% if form.p19p3a %}
+					<strong>{{ form.p19p3a }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 3.B.</strong> {{ titulos.p19p3b | raw }} 
+				{% if form.p19p3b %}
+					<strong>{{ form.p19p3b }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 3.C.</strong> {{ titulos.p19p3c | raw }} 
+				{% if form.p19p3c %}
+					<strong>{{ form.p19p3c }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 3.D.</strong> {{ titulos.p19p3d | raw }} 
+				{% if form.p19p3d %}
+					<strong>{{ form.p19p3d }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Paciente 3.E.</strong> {{ titulos.p19p3e | raw }} 
+				{% if form.p19p3e %}
+					<strong>{{ form.p19p3e }}</strong>
+				{% else %}
+					{{ noaplica | raw }}
+				{% endif %}
+			</p>				
+	
+	<p><strong>18.</strong> {{ titulos.p20 | raw }} <strong>{{ form.p20 }}</strong></p>
+	
+  	<p><strong>19.</strong> {{ titulos.p21 | raw }} 
+  		{% if form.p21a %}
+  			</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.</strong> Manejo y abordaje del paciente: <strong>{{ form.p21a }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>B.</strong> Adherencia al tratamiento: <strong>{{ form.p21b }}</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>C.</strong> Calidad de vida de los pacientes: <strong>{{ form.p21c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>D.</strong> Costes y recursos asistenciales: <strong>{{ form.p21d }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>E.</strong> Profesional sanitario: <strong>{{ form.p21e }}</strong></p>
+		
+		{% else %}
+			{{ noaplica | raw }}
+		{% endif %}</p>
+		
+    </body>
+</html>

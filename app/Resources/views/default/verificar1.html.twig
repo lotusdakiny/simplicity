@@ -1,0 +1,877 @@
+{# app/Resources/views/default/verificar.html.twig #}
+{% extends '/default/cuestionariobase.html.twig' %}
+
+{% block body %}
+	<div class="well well-lg">
+		<p class="no-margin">Por favor, antes de enviar el cuestionario verifique sus respuestas. Una vez enviado no podr&aacute; realizar modificaciones.</p>
+	</div>
+	<ul class="nav nav-tabs" id="myTabs" role="tablist">
+		<li role="presentation" class="active"><h2 id="home-tab"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> CUESTIONARIO CUANTITATIVO</h2></li>
+	</ul>						
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab">
+			<div class="form-horizontal form-resultados">
+				<!-- Multiple Radios (inline) -->
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">1</span> {{ titulos.p1 | raw }} </p>
+					{% if form.p1a %}
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">A</span> {{ titulos.p1a | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p1a }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">B</span> {{ titulos.p1b | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p1b }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">C</span> {{ titulos.p1c | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p1c }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">D</span> {{ titulos.p1d | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p1d }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">E</span> {{ titulos.p1e | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p1e }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">F</span> {{ titulos.p1f | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p1f }}</span>
+								</label>
+							</div>
+						</div>
+					{% else %}
+						{{ noaplica | raw }}					
+					{% endif %}
+				</div>
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">2</span> {{ titulos.p2 | raw }}</p>
+					
+					{% if form.p2a %}
+						<div class="form-group" style="border:none;background:none;">
+							<label class="col-md-7 control-label" for="textinput"></label>
+							<div class="col-md-2">
+								<p class="text-center help-block">
+									% (sumar&aacute; 100%)
+								</p>
+							</div>
+						</div>
+						<!-- Text input-->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> {{ titulos.p2a | raw }}</label>
+							<div class="col-md-2">
+								<span name="textinput" class="form-control input-sm">{{ form.p2a }}</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> {{ titulos.p2b | raw }}</label>
+							<div class="col-md-2">
+								<span name="textinput" class="form-control input-sm">{{ form.p2b }}</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> {{ titulos.p2c | raw }}</label>
+							<div class="col-md-2">
+								<span name="textinput" class="form-control input-sm">{{ form.p2c }}</span>
+							</div>
+							
+							{% if not form.p2c == 0 %}
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"></label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<p class="text-center help-block">
+										% (sumar&aacute; 100%)
+									</p>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">a</span> {{ titulos.p2ca | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2ca }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">b</span> {{ titulos.p2cb | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2cb }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">c</span> {{ titulos.p2cc | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2cc }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">d</span> {{ titulos.p2cd | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2cd }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">e</span> {{ titulos.p2ce | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2ce }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">f</span> {{ titulos.p2cf | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2cf }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">g</span> {{ titulos.p2cg | raw }}</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2cg }}</span>
+								</div>
+								<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput">
+									<span class="badge">h</span> {{ titulos.p2ch | raw }}<br>
+									<label style="margin: 5px 5px;float:left;">{{ titulos.p2texto | raw }}</label>
+									<span name="textinput" class="form-control input-sm" style="float:left; width:50%;">{{ form.p2texto1 }}</span>
+								</label>
+								<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+									<span name="textinput" class="form-control input-sm">{{ form.p2ch }}</span>
+								</div>
+							{% endif %}
+							</div>
+							<div class="form-group">
+								<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> {{ titulos.p2d | raw }}</label>
+								<div class="col-md-2">
+									<span name="textinput" class="form-control input-sm">{{ form.p2d }}</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-12 col-md-7 control-label" for="textinput">
+									<span class="badge">E</span> {{ titulos.p2e | raw }}<br>
+									<label style="margin: 5px 5px;float:left;">{{ titulos.p2texto | raw }}</label>
+									<span name="textinput" class="form-control input-sm" style="float:left; width:50%;">{{ form.p2texto }}</span>
+								</label>
+								<div class="col-xs-12 col-md-2">
+									<span name="textinput" class="form-control input-sm">{{ form.p2e }}</span>
+								</div>
+							</div>
+							<div class="form-group" style="border:none;background:none;">
+								<label class="col-md-7 control-label" for="textinput"></label>
+								<div class="col-md-2">
+									<p class="text-center help-block">
+										% (sumar&aacute; 100%)
+									</p>
+								</div>
+							</div>
+							{% else %}
+								{{ noaplica | raw }}					
+							{% endif %}
+				</div>
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">3</span> {{ titulos.p3 | raw }}</p>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">A</span> {{ titulos.p3a | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3a }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">B</span> {{ titulos.p3b | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3b }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">C</span> {{ titulos.p3c | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3c }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">D</span> {{ titulos.p3d | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3d }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">E</span> {{ titulos.p3e | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3e }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">F</span> {{ titulos.p3f | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3f }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">G</span> {{ titulos.p3g | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3g }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">H</span> {{ titulos.p3h | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3h }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">I</span> {{ titulos.p3i | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3i }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">J</span> {{ titulos.p3j | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3j }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">K</span> {{ titulos.p3k | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3k }}</span>
+							</label>
+						</div>
+					</div>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="radios"><span class="badge">L</span> {{ titulos.p3l | raw }}</label>
+						<div class="col-md-5">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p3l }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form"><span class="label simplicity">4</span> {{ titulos.p4 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="4radios1-4">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span class="control-label bold">{{ form.p4 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">5</span> {{ titulos.p7 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p7 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">6</span> {{ titulos.p8 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p8 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">7</span> {{ titulos.p9 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p9 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block">
+					<p class="tittle-form"><span class="label simplicity">8</span> {{ titulos.p10 | raw }}</strong></p>
+					{% if form.p10a %}
+						<p style="margin: 10px 0 10px 15px;"><label class="control-label2 no-margin" for="radios"><span class="badge">A</span></label> {{ titulos.p10a | raw }}</p>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p10a }}</span>
+								</label>
+							</div>
+						</div>
+						<p style="margin: 10px 0 10px 15px;"><label class="control-label2 no-margin" for="radios"><span class="badge">B</span></label> {{ titulos.p10b | raw }}</p>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p10b }}</span>
+								</label>
+							</div>
+						</div>
+						<p style="margin: 10px 0 10px 15px;"><label class="control-label2 no-margin" for="radios"><span class="badge">C</span></label> {{ titulos.p10c | raw }}</p>
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p10c }}</span>
+								</label>
+							</div>
+						</div>
+					{% else %}
+						{{ noaplica | raw }}				
+					{% endif %}
+				</div>
+				<!-- Multiple Radios (inline) -->
+				<div class="form-block">
+					<p class="tittle-form-double"><span class="label simplicity">9</span>{{ titulos.p11 | raw }}</p>
+					{% if form.p11a %}
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">A</span> {{ titulos.p11a | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p11a }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">B</span> {{ titulos.p11b | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p11b }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">C</span> {{ titulos.p11c | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p11c }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">D</span> {{ titulos.p11d | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p11d }}</span>
+								</label>
+							</div>
+						</div>
+						
+					{% else %}
+						{{ noaplica | raw }}				
+					{% endif %}
+					
+				</div>
+				<div class="form-block">
+					<p class="tittle-form-double"><span class="label simplicity">10</span>{{ titulos.p12 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p12 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block">
+					<p class="tittle-form-double"><span class="label simplicity">11</span>{{ titulos.p13 | raw }}</p>
+					{% if form.p13a %}
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">A</span> {{ titulos.p13a | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13a }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">B</span> {{ titulos.p13b | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13b }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">C</span> {{ titulos.p13c | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13c }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">D</span> {{ titulos.p13d | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13d }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">E</span> {{ titulos.p13e | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13e }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">F</span> {{ titulos.p13f | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13f }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">G</span> {{ titulos.p13g | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13g }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">H</span> {{ titulos.p13h | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13h }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">I</span> {{ titulos.p13i | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p13i }}</span>
+								</label>
+							</div>
+						</div>					
+
+					{% else %}
+						{{ noaplica | raw }}				
+					{% endif %}
+					
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">12</span>{{ titulos.p14 | raw }}</p>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p14 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+                <div class="form-block radios-block">
+                    <p class="tittle-form-double"><span class="label simplicity">13</span>{{ titulos.p15 | raw }}</p>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p15 }}</span>
+							</label>
+                        </div>
+                    </div>
+                </div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">14</span>{{ titulos.p16 | raw }}</p>
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p16 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">15</span>{{ titulos.p17 | raw }}</p>
+					{% if form.p17letra %}
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p17letra }}: {{ form.p17texto }}</span>
+								</label>
+							</div>
+						</div>
+						
+					{% else %}
+						{{ noaplica | raw }}				
+					{% endif %}
+					
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">16</span>{{ titulos.p18 | raw }}</p>
+					{% if form.p18letra %}	
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p18letra }}: {{ form.p18texto }}</span>
+								</label>
+							</div>
+						</div>
+					
+					{% else %}
+						{{ noaplica | raw }}				
+					{% endif %}
+					
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">17</span>{{ titulos.p19 | raw }}</p>
+					<p class="help-block" style="margin-left:15px;">Paciente 1</p>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> {{ titulos.p19p1a | raw }}</label>
+						<div class="col-md-2">
+							{% if form.p19p1a %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p1a }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> {{ titulos.p19p1b | raw }}</label>
+						<div class="col-md-2">
+							{% if form.p19p1b %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p1b }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> {{ titulos.p19p1c | raw }}</label>
+						<div class="col-md-2">
+							{% if form.p19p1c %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p1c }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> {{ titulos.p19p1d | raw }}</label>
+						<div class="col-md-2">
+							{% if form.p19p1d %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p1d }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">E</span> {{ titulos.p19p1e | raw }}</label>
+						<div class="col-md-2">
+							{% if form.p19p1e %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p1e }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<p class="help-block" style="margin-left:15px;">Paciente 2</p>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> {{ titulos.p19p2a | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p2a %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p2a }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> {{ titulos.p19p2b | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p2b %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p2b }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> {{ titulos.p19p2c | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p2c %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p2c }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> {{ titulos.p19p2d | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p2d %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p2d }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">E</span> {{ titulos.p19p2e | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p2e %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p2e }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<p class="help-block" style="margin-left:15px;">Paciente 3</p>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> {{ titulos.p19p3a | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p3a %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p3a }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> {{ titulos.p19p3b | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p3b %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p3b }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> {{ titulos.p19p3c | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p3c %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p3c }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> {{ titulos.p19p3d | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p3d %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p3d }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-7 control-label" for="textinput"><span class="badge">E</span> {{ titulos.p19p3e | raw }}</label>
+						<div class="col-md-2">	
+							{% if form.p19p3e %}
+								<span name="textinput" class="form-control input-sm">{{ form.p19p3e }}</span>
+							{% else %}
+								{{ noaplica | raw }}				
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">18</span>{{ titulos.p20 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="radio-inline" for="radios-0">
+								<img src="img/bullet.png" alt="selecci&oacute;n">
+								<span>{{ form.p20 }}</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-block radios-block">
+					<p class="tittle-form-double"><span class="label simplicity">19</span>{{ titulos.p21 | raw }}</p>
+					{% if form.p21a %}
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">A</span> {{ titulos.p21a | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p21a }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">B</span> {{ titulos.p21b | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p21b }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">C</span> {{ titulos.p21c | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p21c }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">D</span> {{ titulos.p21e | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p21d }}</span>
+								</label>
+							</div>
+						</div>
+						<!-- Multiple Radios (inline) -->
+						<div class="form-group">
+							<label class="col-md-7 control-label" for="radios"><span class="badge">E</span> {{ titulos.p21e | raw }}</label>
+							<div class="col-md-5">
+								<label class="radio-inline" for="radios-0">
+									<img src="img/bullet.png" alt="selecci&oacute;n">
+									<span>{{ form.p21e }}</span>
+								</label>
+							</div>
+						</div>
+					{% else %}
+						{{ noaplica | raw }}				
+					{% endif %}
+				</div>
+				<div class="form-block button-block">
+					<!-- Button (Double) -->
+					<div class="form-group" style="margin-bottom:0;">
+						<div class="col-xs-12 col-md-8 show-grid">
+							<a href="guardar-cuantitativo" class="col-xs-12 col-sm-12 btn btn-success btn-lg">Enviar formulario</a>
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<button id="button2id" name="button2id" onclick="goBack();"class="col-xs-12 col-sm-12 btn btn-danger" style="margin-top: 6px;">Volver</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% block modals %}
+	
+		<!-- Modal Submit-->
+		<div class="modal fade modal-enviar" id="ModalSubmit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="myModalLabel">&iexcl;Enviando formulario!</h3>
+					</div>
+					<div class="modal-body">
+						<div class="progress">
+							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+								<span class="sr-only">40% Complete (success)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	
+	{% endblock %}
+ <script>
+	function goBack() {
+    	window.history.back();
+	}
+</script>
+{% endblock %}

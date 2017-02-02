@@ -1,0 +1,63 @@
+{# app/Resources/views/security/login.html.twig #}
+{% extends '/security/securitybase.html.twig' %}
+
+{% block body %}
+	{% if error %}
+		<div class="alert alert-warning alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    		<strong>Atenci&oacute;n!</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+		</div>
+	{% endif %}
+	<h1 class="text-center">Login</h1>
+	<form id="form-login" class="form-horizontal form-login form-signin" role="form" action="{{ path('login') }}" method="post">
+		<fieldset>
+			<!-- Text input-->
+			<div class="form-group" style="margin-bottom:0;">
+				<label class="col-xs-2 control-label ico-label" for="Usuario" style="padding-top: 0;">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+					</span>
+				</label>
+				<div class="col-xs-10">
+					<input id="email" name="_username" value="{{ last_username }}" placeholder="Email" class="form-control input-md" required="" type="text" value="">
+				</div>
+			</div>
+			<!-- Password input-->
+			<div class="form-group">
+				<label class="col-xs-2 control-label ico-label" for="Password" style="padding-top: 0;">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-unlock-alt fa-stack-1x fa-inverse"></i>
+					</span>
+				</label>
+				<div class="col-xs-10">
+					<input id="password" name="_password" placeholder="Password" class="form-control input-md" required="" type="password">
+				</div>
+			</div>
+	
+			<!-- Button -->
+			<div class="form-group">
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-lg btn-sample btn-block">Entrar</button>
+				</div>
+			</div>
+			<!-- Button -->
+			<div class="form-group">
+	        	<div class="col-md-12">
+	            	<a href="olvido" class="btn-register btn btn-default btn-block">&iquest;Olvid&#243; su contrase&ntilde;a?</a>
+	            </div>
+			</div>
+		</fieldset>
+		<input type="hidden" name="_csrf_token" value="">
+	</form>
+	
+	<script>
+	document.getElementById("form-login").addEventListener("submit", function(event){
+		
+		var pas = $.trim($("#password").val());
+		$("#password").val(pas);
+		
+	});
+	</script>
+{% endblock %}

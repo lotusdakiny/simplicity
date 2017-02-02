@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SIMPLICITY</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="css/init.css">
+		<link rel="stylesheet" href="css/programer.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-10 col-md-offset-1">
+						<div class="navbar-header">
+							<div class="row">
+								<div class="small-logo-container pull-left col-xs-12 col-sm-8 col-md-8">
+									<a class="small-logo" href="/" title="Home"><img src="img/logo_fixis.png" alt="Logo SEFH" /> <span>El valor de la simplicidad</span></a>
+								</div>
+								<div class="small-logo-container pull-right col-xs-12 col-sm-4 col-md-4">
+									<div class="panel-heading">
+										<span class="fa-stack fa-lg">
+											<i class="fa fa-circle fa-stack-2x"></i>
+											<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+										</span>
+										<a href="#" style="color: #333333"><strong>{{ username }}</strong></a>
+										<a href="logout" class="text-muted pull-right" style="margin-top: 8px;"><i class="fa fa-sign-in" aria-hidden="true"></i> Salir</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="big-logo-row">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-10 col-md-offset-1 big-logo-container">
+						<div class="big-logo">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<a href="/" title="Home"><img class="img-responsive" src="img/logo.png" alt="Logo SEFH" /></a>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6">
+									<div class="row">
+										<div class="col-xs-12 control-label ico-label" style="margin-top: 20px;">
+											<div class="row user">
+												<div class="col-xs-12 col-sm-8 col-sm-offset-4 col-lg-8 col-lg-offset-4">
+													<div class="panel panel-default">
+														<div class="panel-heading">
+															<span class="fa-stack fa-lg">
+																<i class="fa fa-circle fa-stack-2x"></i>
+																<i class="fa fa-user fa-stack-1x fa-inverse"></i>
+															</span>
+															<a href="#" style="color: #333333"><strong>{{ username }}</strong></a>
+															<a href="logout" class="text-muted pull-right" style="margin-top: 8px;"><i class="fa fa-sign-in" aria-hidden="true"></i> Salir</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!--/.col-xs-12 -->
+				</div><!--/.row -->
+			</div><!--/.container -->
+		</div><!--/.container-fluid -->
+		{% block container %}
+		<div class="container page-form">
+		{% endblock %}
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+					<div class="account-wall">
+						{% block body %}
+                		{% endblock %}
+					</div>
+					<div class="footer-content">
+						<div class="col-xs-12">
+							<p class="pull-left">
+								<a href="#" data-toggle="modal" data-target="#ModalPolitica">Pol&iacute;tica de privacidad</a>
+								|
+								<a href="pdf/CalidadyCertificado.pdf" target="_blank">Pol&iacute;tica de Calidad</a>
+							</p>
+							<p class="pull-right">&#169; <span id="fecha">2015</span>, <a href="http://clover-sgm.es" target="_blank" style="color: #333333;">Clover-SGM</a></p>
+						</div>
+					</div>
+				</div>
+{% block modals %}
+{% endblock %}
+{% include 'aviso.html.twig' %}				
+			</div>
+		</div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/init.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1351 @@
+{# app/Resources/views/default/cuantitativo.html.twig #}
+{% extends '/default/cuestionariobase.html.twig' %}
+
+{% block body %}
+	<div class="well well-lg">
+		<p class="no-margin">Estimado Experto/a {{ user.apellido1 }}, si como consecuencia de su pr&aacute;ctica cl&iacute;nica no puede contestar alguna de las preguntas debido a que caen fuera de su competencia profesional, por favor, ind&iacute;quelo seleccionando la opci&oacute;n de "No aplica".</p>
+	</div>						
+	<ul class="nav nav-tabs" id="myTabs" role="tablist">
+		<li role="presentation" class="active"><h2 id="home-tab"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> CUESTIONARIO CUANTITATIVO</h2></li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab">
+			{{ form_start(form, {'attr': {'class': 'form-horizontal', 'id': 'form1'}}) }}
+		    {{ form_errors(form) }}
+																	
+			<!-- Pregunta1 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">1</span> {{ titulos.p1 | raw }}</p>
+				<div class="form-group">
+					<div class="col-md-5">
+						<label class="checkbox-inline" for="p1_noaplica_check">
+							<input type="checkbox" id="p1_noaplica_check" value="0" class="bloque1">
+							<label for="p1_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>					
+
+				<!-- Multiple Radios (inline) Pregunta1.A -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque1"></div>
+					<label class="col-md-7 control-label p1-label" for="radios"><span class="badge">A</span> Efectos adversos del tratamiento.</label>
+					<div class="col-md-5">
+						{% for var in form.p1a %}
+							<label class="radio-inline" for="form_p1a_{{ loop.index0}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
+								<label for="form_p1a_{{ loop.index0 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta1.B -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque1"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">B</span> Duraci&oacute;n del tratamiento.</label>
+					<div class="col-md-5">
+						{% for var in form.p1b %}
+							<label class="radio-inline" for="form_p1b_{{ loop.index0 }}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
+								<label for="form_p1b_{{ loop.index0 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}								
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta1.C -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque1"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">C</span> N&uacute;mero de comprimidos.</label>
+					<div class="col-md-5">
+						{% for var in form.p1c %}
+							<label class="radio-inline" for="form_p1c_{{ loop.index0 }}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
+								<label for="form_p1c_{{ loop.index0 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+										
+				<!-- Multiple Radios (inline) Pregunta1.D -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque1"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">D</span> Posolog&iacute;a.</label>
+					<div class="col-md-5">
+						{% for var in form.p1d %}
+							<label class="radio-inline" for="form_p1d_{{ loop.index0}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
+								<label for="form_p1d_{{ loop.index0 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>								
+						{% endfor %}				
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta1.E -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque1"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">E</span> Polimedicaci&oacute;n.</label>
+					<div class="col-md-5">
+						{% for var in form.p1e %}
+							<label class="radio-inline" for="form_p1e_{{ loop.index0}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
+								<label for="form_p1e_{{ loop.index0 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>						
+						{% endfor %}			
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta1.F -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque1"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">F</span> Factores psico-sociales del paciente (s&iacute;ntomas depresivos, adicci&oacute;n a drogas, problemas econ&oacute;micos...).</label>
+					<div class="col-md-5">
+						{% for var in form.p1f %}
+							<label class="radio-inline" for="form_p1f_{{ loop.index0 }}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque1'}}) }}
+								<label for="form_p1f_{{ loop.index0 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>						
+						{% endfor %}			
+					</div>
+				</div>
+			</div>
+			
+			<!-- Pregunta2 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">2</span> De sus pacientes que <strong>no han alcanzado la curaci&oacute;n</strong> con los actuales AADs, por favor, indique porcentualmente los motivos a los que ha sido debido:</p>
+				<div class="form-group">
+					<div class="col-md-5">
+						<label class="checkbox-inline" for="p2_noaplica_check">
+							<input type="checkbox" id="p2_noaplica_check" value="0" class="bloque2">
+							<label for="p2_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				<div class="form-group" style="border:none;background:none;">
+					<label class="col-md-7 control-label" for="textinput"></label>
+					<div class="col-md-2">
+						<p class="text-center help-block">
+							% (sumar&aacute; 100%)
+						</p>
+					</div>
+				</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque2"></div>
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> Recidiva.</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p2a) }}
+						{{ form_widget(form.p2a, {'attr': {'class': 'form-control input-sm p2 radio-bloque2', 'value': '0'}}) }}	
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque2"></div>
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> Breakthrough.</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p2b) }}
+						{{ form_widget(form.p2b, {'attr': {'class': 'form-control input-sm p2 radio-bloque2', 'value': '0'}}) }}
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque2"></div>
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> Discontinuaci&oacute;n del tratamiento por efectos adversos.</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p2c) }}
+						{{ form_widget(form.p2c, {'attr': {'class': 'form-control input-sm p2 radio-bloque2', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"></label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						<p class="text-center help-block">
+							% (sumar&aacute; 100%)
+						</p>
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">a</span> Cefalea</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2ca) }}
+						{{ form_widget(form.p2ca, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">b</span> Fatiga</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2cb) }}
+						{{ form_widget(form.p2cb, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">c</span> Hiperbilirrubinemia</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2cc) }}
+						{{ form_widget(form.p2cc, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">d</span> Elevaci&oacute;n ALT</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2cd) }}
+						{{ form_widget(form.p2cd, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">e</span> Prurito</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2ce) }}
+						{{ form_widget(form.p2ce, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">f</span> Anemia</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2cf) }}
+						{{ form_widget(form.p2cf, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+					<label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">g</span> Coinfectados con VIH: disminuci&oacute;n CD4 o fallo virol&oacute;gico del VIH</label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2cg) }}
+						{{ form_widget(form.p2cg, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+					</div>
+                    <label class="col-xs-11 col-xs-offset-1 col-md-6 col-md-offset-1 control-label" for="textinput"><span class="badge">h</span> {{ titulos.p2ch | raw }}<br>
+                        <label style="margin: 5px 5px;float:left;">{{ titulos.p2texto | raw }}</label>
+                        {{ form_errors(form.p2texto1) }}
+						{{ form_widget(form.p2texto1, {'attr': {'class': 'form-control input-sm radio-bloque2', 'style': 'width:60%', 'disabled': 'disabled'}}) }}
+                    </label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						{{ form_errors(form.p2ch) }}
+						{{ form_widget(form.p2ch, {'attr': {'class': 'form-control input-sm p2 radio-bloque2 p2c', 'value': '0'}}) }}
+						<p class="text-right help-block" id="pregunta2result2"></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque2"></div>
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> Decisi&oacute;n de discontinuaci&oacute;n del tratamiento por el paciente.</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p2d) }}
+						{{ form_widget(form.p2d, {'attr': {'class': 'form-control input-sm p2', 'value': '0'}}) }}
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque2"></div>
+					<label class="col-xs-12 col-md-7 control-label" for="textinput">
+						<span class="badge">E</span> Discontinuaci&oacute;n de tratamiento debido a otros motivos.<br>
+						<label style="margin: 5px 5px;float:left;">Describa cu&aacute;les:</label>
+							{{ form_errors(form.p2texto) }}
+							{{ form_widget(form.p2texto, {'attr': {'class': 'form-control input-sm radio-bloque2', 'style': 'width:60%', 'disabled': 'disabled'}}) }}
+						</label>
+					</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p2e) }}
+						{{ form_widget(form.p2e, {'attr': {'class': 'form-control input-sm p2', 'value': '0'}}) }}
+						<p class="text-right help-block" id="pregunta2result1"></p>
+					</div>
+				</div>
+				<div class="form-group" style="border:none;background:none;">
+					<label class="col-md-6 control-label" for="textinput"></label>
+					<div class="col-xs-11 col-xs-offset-1 col-md-2 col-md-offset-1">
+						<p class="text-center help-block">
+							% (sumar&aacute; 100%)
+						</p>
+					</div>
+					<div class="col-md-8">
+						<p class="text-right help-block" id="pregunta2error1" style="font-size:1.1em;font-weight:600;color:red;"></p>
+						<p class="text-right help-block" id="pregunta2error2" style="font-size:1.1em;font-weight:600;color:red;"></p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Pregunta3 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">3</span> {{ titulos.p3 | raw }}</p>
+				
+				<!-- Multiple Radios (inline) Pregunta3.A -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">A</span>{{ titulos.p3a | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3a %}
+							<label class="radio-inline" for="form_p3a_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3a', 'type': 'radio'}}) }}
+								<label for="form_p3a_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}	
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.B -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">B</span>{{ titulos.p3b | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3b %}
+							<label class="radio-inline" for="form_p3b_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3b', 'type': 'radio'}}) }}
+								<label for="form_p3b_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}													
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.C -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">C</span>{{ titulos.p3c | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3c %}
+							<label class="radio-inline" for="form_p3c_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3c', 'type': 'radio'}}) }}
+								<label for="form_p3c_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}						
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.D -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">D</span>{{ titulos.p3d | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3d %}
+							<label class="radio-inline" for="form_p3d_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3d', 'type': 'radio'}}) }}
+								<label for="form_p3d_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}						
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.E -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">E</span>{{ titulos.p3e | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3e %}
+							<label class="radio-inline" for="form_p3e_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3e', 'type': 'radio'}}) }}
+								<label for="form_p3e_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.F -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">F</span>{{ titulos.p3f | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3f %}
+							<label class="radio-inline" for="form_p3f_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3f', 'type': 'radio'}}) }}
+								<label for="form_p3f_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.G -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">G</span>{{ titulos.p3g | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3g %}
+							<label class="radio-inline" for="form_p3g_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3g', 'type': 'radio'}}) }}
+								<label for="form_p3g_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.H -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">H</span>{{ titulos.p3h | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3h %}
+							<label class="radio-inline" for="form_p3h_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3h', 'type': 'radio'}}) }}
+								<label for="form_p3h_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.I -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">I</span>{{ titulos.p3i | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3i %}
+							<label class="radio-inline" for="form_p3i_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3i', 'type': 'radio'}}) }}
+								<label for="form_p3i_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.J -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">J</span>{{ titulos.p3j | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3j %}
+							<label class="radio-inline" for="form_p3j_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3j', 'type': 'radio'}}) }}
+								<label for="form_p3j_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.K -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">K</span>{{ titulos.p3k | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3k %}
+							<label class="radio-inline" for="form_p3k_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3k', 'type': 'radio'}}) }}
+								<label for="form_p3k_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta3.L -->
+				<div class="form-group">
+					<label class="col-md-6 control-label" for="radios"><span class="badge">L</span>{{ titulos.p3l | raw }}</label>
+					<div class="col-md-6">
+						{% for var in form.p3l %}
+							<label class="radio-inline" for="form_p3l_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p3l', 'type': 'radio'}}) }}
+								<label for="form_p3l_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+			
+			</div>
+			
+			<!-- Pregunta4 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form"><span class="label simplicity">4</span>{{ titulos.p4 | raw }}</p>
+				
+				{% for var in form.p4 %}
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+							<label class="radio-inline" for="form_p4_{{ loop.index - 1}}">
+								{{ form_widget(var) }}						
+								<label for="form_p4_{{ loop.index - 1}}">&nbsp;</label>
+								<span class="control-label bold">{{ var.vars.value }}</span>
+							</label>
+							{% if loop.index == 4 %}
+								<input disabled name="p4texto" id="p4texto" type="text" placeholder="Indique cu&aacute;les" class="form-control input-sm radio-bloque4" style="width:50%;display: inline;margin-left:10px">
+							{% endif %}							
+						</div>
+					</div>
+				{% endfor %}
+							
+			</div>
+			
+			<!-- Pregunta7 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">5</span>{{ titulos.p7 | raw }}</p>				
+				<div class="form-group">
+					<div class="col-xs-12">
+						{% for var in form.p7 %}
+							<label class="radio-inline" for="form_p7_{{ loop.index - 1}}">
+								{{ form_widget(var) }}
+								<label for="form_p7_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			
+			<!-- Pregunta8 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">6</span> {{ titulos.p8 | raw }}</strong></p>
+				
+				<div class="form-group">
+					<div class="col-xs-12">
+						{% for var in form.p8 %}
+							<label class="radio-inline" for="form_p8_{{ loop.index - 1}}">
+								{{ form_widget(var) }}
+								<label for="form_p8_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ form_label(var) }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			
+			<!-- Pregunta9 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">7</span> {{ titulos.p9 | raw }}</p>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<label class="radio-inline" for="9radios-0">
+							<input type="radio" name="9radios" id="9radios-0" value="1">
+							<label for="9radios-0">&nbsp;</label>
+							<span>S&iacute;</span>
+						</label>
+						<label class="radio-inline" for="form_p9_0">
+							{{ form_widget(form.p9.0) }}
+							<label for="form_p9_0">&nbsp;</label>
+							<span>No</span>
+						</label>
+						<label class="radio-inline" for="form_p9_1">
+							{{ form_widget(form.p9.1) }}
+							<label for="form_p9_1">&nbsp;</label>
+							<span>{{ form_label(form.p9.1) }}</span>
+						</label>
+					</div>
+				</div>
+				<div style="display:none;" id="p9addition">
+				<p style="margin: 10px 0 10px 15px;">En caso afirmativo &iquest;Qu&eacute; <strong>porcentaje de pacientes</strong> ha requerido <strong>atenci&oacute;n psiqui&aacute;trica o tratamiento relacionado</strong>?</p>
+				{% for var in form.p9 %}
+					{% if loop.index > 2 %}	
+						<div class="form-group">
+							<div class="col-xs-12">
+								<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+								<label class="radio-inline" for="form_p9_{{ loop.index - 1}}">
+									{{ form_widget(var, {'attr': {'name': 'radios-p9', 'type': 'radio'}}) }}
+									<label for="form_p9_{{ loop.index - 1}}">&nbsp;</label>
+									<span class="control-label bold">{{ var.vars.value }}</span>
+								</label>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+				</div>			
+			</div>
+			
+			<!-- Pregunta10 -->
+			<div class="form-block">
+				<p class="tittle-form"><span class="label simplicity">8</span>{{ titulos.p10 | raw }}</p>
+				
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="checkbox-inline" for="p10_noaplica_check">
+							<input type="checkbox" id="p10_noaplica_check" value="0" class="bloque10">
+							<label for="p10_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				
+				<div style="position: relative;">
+					<div class="no-aplica-mascara bloque10"></div>
+					<!-- Multiple Radios (inline) Pregunta10.A -->
+					<p style="margin: 10px 0 10px 15px;"><label class="control-label2 no-margin" for="radios"><span class="badge">A</span></label>{{ titulos.p10a | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for var in form.p10a %}
+								<label class="radio-inline" for="form_p10a_{{ loop.index - 1}}">
+									{{ form_widget(var, {'attr': {'class': 'radio-bloque10'}}) }}
+									<label for="form_p10a_{{ loop.index - 1 }}">&nbsp;</label>
+									<span>{{ form_label(var) }}</span>
+								</label>
+							{% endfor %}
+						</div>
+					</div>
+					
+					<!-- Multiple Radios (inline) Pregunta10.B -->
+					<p style="margin: 10px 0 10px 15px;"><label class="control-label2 no-margin" for="radios"><span class="badge">B</span></label>{{ titulos.p10b | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for var in form.p10b %}
+								<label class="radio-inline" for="form_p10b_{{ loop.index - 1}}">
+									{{ form_widget(var, {'attr': {'class': 'radio-bloque10'}}) }}
+									<label for="form_p10b_{{ loop.index - 1 }}">&nbsp;</label>
+									<span>{{ form_label(var) }}</span>
+								</label>
+							{% endfor %}
+						</div>
+					</div>
+					
+					<!-- Multiple Radios (inline) Pregunta10.C -->
+					<p style="margin: 10px 0 10px 15px;"><label class="control-label2 no-margin" for="radios"><span class="badge">C</span></label>{{ titulos.p10c | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for var in form.p10c %}
+								<label class="radio-inline" for="form_p10c_{{ loop.index - 1}}">
+									{{ form_widget(var, {'attr': {'class': 'radio-bloque10'}}) }}
+									<label for="form_p10c_{{ loop.index - 1 }}">&nbsp;</label>
+									<span>{{ form_label(var) }}</span>
+								</label>
+							{% endfor %}
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<!-- Pregunta11 -->
+			<div class="form-block">
+				<p class="tittle-form-double"><span class="label simplicity">9</span>{{ titulos.p11 | raw }}</p>
+				
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="checkbox-inline" for="p11_noaplica_check">
+							<input type="checkbox" id="p11_noaplica_check" value="0" class="bloque11">
+							<label for="p11_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				
+				<!-- Multiple Radios (inline) Pregunta11.A -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque11"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">A</span>{{ titulos.p11a | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p11a %}
+							<label class="radio-inline" for="form_p11a_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque11'}}) }}
+								<label for="form_p11a_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta11.B -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque11"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">B</span>{{ titulos.p11b | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p11b %}
+							<label class="radio-inline" for="form_p11b_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque11'}}) }}
+								<label for="form_p11b_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta11.C -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque11"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">C</span>{{ titulos.p11c | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p11c %}
+							<label class="radio-inline" for="form_p11c_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque11'}}) }}
+								<label for="form_p11c_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta11.D -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque11"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">D</span>{{ titulos.p11d | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p11d %}
+							<label class="radio-inline" for="form_p11d_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque11'}}) }}
+								<label for="form_p11d_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+			</div>
+			
+			<!-- Pregunta12 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">10</span>{{ titulos.p12 | raw }}</p>
+				
+				<!-- Multiple Radios (inline) -->
+				{% for var in form.p12 %}
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+							<label class="radio-inline" for="form_p12_{{ loop.index0 }}">
+								{{ form_widget(var) }}
+								<label for="form_p12_{{ loop.index0 }}">&nbsp;</label>
+								<span class="control-label bold">{{ var.vars.value }}</span>
+							</label>
+						</div>
+					</div>
+				{% endfor %}				
+			</div>
+			
+			<!-- Pregunta13 -->	
+			<div class="form-block">
+				<p class="tittle-form-double"><span class="label simplicity">11</span>{{ titulos.p13 | raw }}</p>
+				
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="checkbox-inline" for="p13_noaplica_check">
+							<input type="checkbox" id="p13_noaplica_check" value="0" class="bloque13">
+							<label for="p13_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				
+				<!-- Multiple Radios (inline) Pregunta13.A -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">A</span>{{ titulos.p13a | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13a %}
+							<label class="radio-inline" for="form_p13a_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13a_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta13.B -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">B</span>{{ titulos.p13b | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13b %}
+							<label class="radio-inline" for="form_p13b_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13b_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>			
+					
+				<!-- Multiple Radios (inline) Pregunta13.C -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">C</span>{{ titulos.p13c | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13c %}
+							<label class="radio-inline" for="form_p13c_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13c_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>				
+			
+				<!-- Multiple Radios (inline) Pregunta13.D -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">D</span>{{ titulos.p13d | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13d %}
+							<label class="radio-inline" for="form_p13d_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13d_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>				
+
+				<!-- Multiple Radios (inline) Pregunta13.E -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">E</span>{{ titulos.p13e | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13e %}
+							<label class="radio-inline" for="form_p13e_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13e_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>				
+			
+				<!-- Multiple Radios (inline) Pregunta13.F -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">F</span>{{ titulos.p13f | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13f %}
+							<label class="radio-inline" for="form_p13f_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13f_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>	
+				
+				<!-- Multiple Radios (inline) Pregunta13.G -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">G</span>{{ titulos.p13g | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13g %}
+							<label class="radio-inline" for="form_p13g_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13g_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>					
+
+				<!-- Multiple Radios (inline) Pregunta13.H -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">H</span> {{ titulos.p13h | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13h %}
+							<label class="radio-inline" for="form_p13h_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13h_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>	
+			
+				<!-- Multiple Radios (inline) Pregunta13.I -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque13"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">I</span>{{ titulos.p13i | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p13i %}
+							<label class="radio-inline" for="form_p13i_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque13'}}) }}
+								<label for="form_p13i_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>				
+			
+			</div>
+
+			<!-- Pregunta14 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">12</span>{{ titulos.p14 | raw }}</p>
+				
+				<!-- Multiple Radios (inline) -->
+				{% for var in form.p14 %}
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+							<label class="radio-inline" for="form_p14_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p14', 'type': 'radio'}}) }}
+								<label for="form_p14_{{ loop.index - 1}}">&nbsp;</label>
+								<span class="control-label bold">{{ var.vars.value }}</span>
+							</label>
+						</div>
+					</div>
+				{% endfor %}				
+			</div>
+			
+			<!-- Pregunta15 -->
+			<div class="form-block radios-block">
+            	<p class="tittle-form-double"><span class="label simplicity">13</span>{{ titulos.p15 | raw }}</p>
+                
+                {% for var in form.p15 %}
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+							<label class="radio-inline" for="form_p15_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p15', 'type': 'radio'}}) }}						
+								<label for="form_p15_{{ loop.index - 1}}">&nbsp;</label>
+								<span class="control-label bold">{{ var.vars.value }}</span>
+							</label>
+							{% if loop.index == 3 %}
+								<input disabled name="p15texto" id="p15texto" type="text" placeholder="Indique cu&aacute;l" class="form-control input-sm" style="width:50%;display: inline;margin-left:10px">
+							{% endif %}							
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+                                    
+			<!-- Pregunta16 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">14</span>{{ titulos.p16 | raw }}</p>
+				
+				<!-- Multiple Radios (inline) -->
+				{% for var in form.p16 %}
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+							<label class="radio-inline" for="form_p16_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p16', 'type': 'radio'}}) }}
+								<label for="form_p16_{{ loop.index - 1}}">&nbsp;</label>
+								<span class="control-label bold">{{ var.vars.value }}</span>
+							</label>
+						</div>
+					</div>
+				{% endfor %}				
+			</div>                                    
+			
+			<!-- Pregunta17 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">15</span>{{ titulos.p17 | raw }}</p>
+
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="checkbox-inline" for="p17_noaplica_check">
+							<input type="checkbox" id="p17_noaplica_check" value="0" class="bloque17">
+							<label for="p17_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				
+				<div style="position: relative;">
+					<div class="no-aplica-mascara bloque17"></div>
+													
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for var in form.p17letra %}
+								<label class="radio-inline" for="form_p17letra_{{ loop.index - 1}}">
+									{{ form_widget(var, {'attr': {'class': 'radio-bloque17'}}) }}
+									<label for="form_p17letra_{{ loop.index - 1}}">&nbsp;</label>
+									<span>{{ form_label(var) }}</span>
+								</label>
+							{% endfor %}	
+						</div>
+					</div>
+					<p  class="help-block" style="margin: 10px 0 10px 15px;">{{ titulos.p17p18 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for i in 0..4 %}
+								<select disabled id="p17texto_{{ i }}" name="p17texto[{{ i }}]" class="form-control input-sm p17texto" style="width:15%;display: inline;margin-left:10px">
+	  								<option value="basal">basal</option>
+	  								<option value="semana 4">semana 4</option>
+	  								<option value="EOT">EOT</option>
+	  								<option value="RVS12">RVS12</option>
+	  								<option value="RVS24">RVS24</option>
+	  								<option value="Otra">Otra</option>
+								</select>
+							{% endfor %}	
+						</div>
+						<div class="col-xs-12">
+							{% for i in 0..4 %}
+								<input type="text" id="p17otro_{{ i }}" name="p17otro[{{ i }}]" class="form-control input-sm p17otro" style="width:15%;display: inline;margin-left:10px">
+							{% endfor %}	
+						</div>
+					</div>
+
+				</div>
+
+			</div>						
+			
+			<!-- Pregunta18 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">16</span>{{ titulos.p18 | raw }}</p>
+
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="checkbox-inline" for="p18_noaplica_check">
+							<input type="checkbox" id="p18_noaplica_check" value="0" class="bloque18">
+							<label for="p18_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				
+				<div style="position: relative;">
+					<div class="no-aplica-mascara bloque18"></div>
+														
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for var in form.p18letra %}
+								<label class="radio-inline" for="form_p18letra_{{ loop.index - 1}}">
+									{{ form_widget(var, {'attr': {'class': 'radio-bloque18'}}) }}
+									<label for="form_p18letra_{{ loop.index - 1}}">&nbsp;</label>
+									<span>{{ form_label(var) }}</span>
+								</label>
+							{% endfor %}	
+						</div>
+					</div>
+					<p  class="help-block" style="margin: 10px 0 10px 15px;">{{ titulos.p17p18 | raw }}</p>
+					<div class="form-group">
+						<div class="col-xs-12">
+							{% for i in 0..4 %}
+								<select disabled id="p18texto_{{ i }}" name="p18texto[{{ i }}]" class="form-control input-sm p18texto" style="width:15%;display: inline;margin-left:10px">
+	  								<option value="basal">basal</option>
+	  								<option value="semana 4">semana 4</option>
+	  								<option value="EOT">EOT</option>
+	  								<option value="RVS12">RVS12</option>
+	  								<option value="RVS24">RVS24</option>
+	  								<option value="Otra">Otra</option>
+								</select>
+							{% endfor %}	
+						</div>
+						<div class="col-xs-12">
+							{% for i in 0..4 %}
+								<input type="text" id="p18otro_{{ i }}" name="p18otro[{{ i }}]" class="form-control input-sm p18otro" style="width:15%;display: inline;margin-left:10px">
+							{% endfor %}	
+						</div>
+					</div>
+			
+				</div>
+			
+			</div>
+			
+			<!-- Pregunta19 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">17</span>{{ titulos.p19 | raw }}</p>
+									
+				<p class="help-block" style="margin-left:15px;">Paciente 1</p>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> Duraci&oacute;n de la consulta:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p1a) }}
+						{{ form_widget(form.p19p1a, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p1a">
+							<input type="checkbox" id="p19p1a" class="check-p19">						
+							<label for="p19p1a">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> Tiempo destinado a analizar el perfil del paciente para la elecci&oacute;n del tratamiento:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p1b) }}
+						{{ form_widget(form.p19p1b, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p1b">
+							<input type="checkbox" id="p19p1b" class="check-p19">						
+							<label for="p19p1b">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>					
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> Tiempo destinado a analizar las posibles interacciones farmacol&oacute;gicas:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p1c) }}
+						{{ form_widget(form.p19p1c, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p1c">
+							<input type="checkbox" id="p19p1c" class="check-p19">						
+							<label for="p19p1c">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>					
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> Tiempo destinado por alguien de la Unidad a explicar al paciente o familiares c&oacute;mo tomar el r&eacute;gimen:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p1d) }}
+						{{ form_widget(form.p19p1d, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p1d">
+							<input type="checkbox" id="p19p1d" class="check-p19">						
+							<label for="p19p1d">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">E</span> N&uacute;mero de comprimidos que contiene el r&eacute;gimen prescrito:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p1e) }}
+						{{ form_widget(form.p19p1e, {'attr': {'class': 'radio-bloque19 form-control input-sm'}}) }}		
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p1e">
+							<input type="checkbox" id="p19p1e" class="check-p19">						
+							<label for="p19p1e">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				
+				<p class="help-block" style="margin-left:15px;">Paciente 2</p>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> Duraci&oacute;n de la consulta:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p2a) }}
+						{{ form_widget(form.p19p2a, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p2a">
+							<input type="checkbox" id="p19p2a" class="check-p19">						
+							<label for="p19p2a">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> Tiempo destinado a analizar el perfil del paciente para la elecci&oacute;n del tratamiento:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p2b) }}
+						{{ form_widget(form.p19p2b, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p2b">
+							<input type="checkbox" id="p19p2b" class="check-p19">						
+							<label for="p19p2b">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> Tiempo destinado a analizar las posibles interacciones farmacol&oacute;gicas:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p2c) }}
+						{{ form_widget(form.p19p2c, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p2c">
+							<input type="checkbox" id="p19p2c" class="check-p19">						
+							<label for="p19p2c">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> Tiempo destinado por alguien de la Unidad a explicar al paciente o familiares c&oacute;mo tomar el r&eacute;gimen:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p2d) }}
+						{{ form_widget(form.p19p2d, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p2d">
+							<input type="checkbox" id="p19p2d" class="check-p19">						
+							<label for="p19p2d">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">E</span> N&uacute;mero de comprimidos que contiene el r&eacute;gimen prescrito:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p2e) }}
+						{{ form_widget(form.p19p2e, {'attr': {'class': 'radio-bloque19 form-control input-sm'}}) }}
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p2e">
+							<input type="checkbox" id="p19p2e" class="check-p19">						
+							<label for="p19p2e">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				
+				<p class="help-block" style="margin-left:15px;">Paciente 3</p>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">A</span> Duraci&oacute;n de la consulta:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p3a) }}
+						{{ form_widget(form.p19p3a, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p3a">
+							<input type="checkbox" id="p19p3a" class="check-p19">						
+							<label for="p19p3a">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">B</span> Tiempo destinado a analizar el perfil del paciente para la elecci&oacute;n del tratamiento:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p3b) }}
+						{{ form_widget(form.p19p3b, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p3b">
+							<input type="checkbox" id="p19p3b" class="check-p19">						
+							<label for="p19p3b">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">C</span> Tiempo destinado a analizar las posibles interacciones farmacol&oacute;gicas:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p3c) }}
+						{{ form_widget(form.p19p3c, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p3c">
+							<input type="checkbox" id="p19p3c" class="check-p19">						
+							<label for="p19p3c">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">D</span> Tiempo destinado por alguien de la Unidad a explicar al paciente o familiares c&oacute;mo tomar el r&eacute;gimen:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p3d) }}
+						{{ form_widget(form.p19p3d, {'attr': {'class': 'radio-bloque19 form-control input-sm', 'placeholder': 'minutos', 'type': 'number'}}) }}	
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p3d">
+							<input type="checkbox" id="p19p3d" class="check-p19">						
+							<label for="p19p3d">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-7 control-label" for="textinput"><span class="badge">E</span> N&uacute;mero de comprimidos que contiene el r&eacute;gimen prescrito:</label>
+					<div class="col-md-2">
+						{{ form_errors(form.p19p3e) }}
+						{{ form_widget(form.p19p3e, {'attr': {'class': 'radio-bloque19 form-control input-sm'}}) }}
+					</div>
+					<div class="col-md-2">
+						<label class="checkbox-inline" for="p19p3e">
+							<input type="checkbox" id="p19p3e" class="check-p19">						
+							<label for="p19p3e">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>
+				</div>
+
+			</div>
+			
+			<!-- Pregunta20 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">18</span>{{ titulos.p20 | raw }}</p>
+			
+				<!-- Multiple Radios (inline) -->
+				{% for var in form.p20 %}
+					<div class="form-group">
+						<div class="col-xs-12">
+							<label class="control-label2 no-margin" for="radios"><span class="badge">{{ form_label(var) }}</span></label>
+							<label class="radio-inline" for="form_p20_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'name': 'radios-p20', 'type': 'radio'}}) }}						
+								<label for="form_p20_{{ loop.index - 1}}">&nbsp;</label>
+								<span class="control-label bold">{{ var.vars.value }}</span>
+							</label>
+							{% if loop.index == 4 %}
+								<input disabled name="p20texto" id="p20texto" type="text" placeholder="especifique cu&aacute;l es su pr&aacute;ctica habitual" class="form-control input-sm" style="width:50%;display: inline;margin-left:10px">
+							{% endif %}							
+						</div>
+					</div>
+				{% endfor %}																
+			</div>
+
+			<!-- Pregunta21 -->
+			<div class="form-block radios-block">
+				<p class="tittle-form-double"><span class="label simplicity">19</span>{{ titulos.p21 | raw }}</p>
+				
+				<div class="form-group">
+					<div class="col-md-6">
+						<label class="checkbox-inline" for="p21_noaplica_check">
+							<input type="checkbox" id="p21_noaplica_check" value="0" class="bloque21">
+							<label for="p21_noaplica_check">&nbsp;</label>
+							<span>No aplica</span>
+						</label>
+					</div>				
+				</div>	
+				
+				<!-- Multiple Radios (inline) Pregunta21.A -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque21"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">A</span>{{ titulos.p21a | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p21a %}
+							<label class="radio-inline" for="form_p21a_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque21'}}) }}
+								<label for="form_p21a_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}					
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta21.B -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque21"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">B</span>{{ titulos.p21b | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p21b %}
+							<label class="radio-inline" for="form_p21b_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque21'}}) }}
+								<label for="form_p21b_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}						
+					</div>
+				</div>
+
+				<!-- Multiple Radios (inline) Pregunta21.C -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque21"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">C</span>{{ titulos.p21c | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p21c %}
+							<label class="radio-inline" for="form_p21c_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque21'}}) }}
+								<label for="form_p21c_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta21.D -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque21"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">D</span>{{ titulos.p21d | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p21d %}
+							<label class="radio-inline" for="form_p21d_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque21'}}) }}
+								<label for="form_p21d_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}
+					</div>
+				</div>
+				
+				<!-- Multiple Radios (inline) Pregunta21.E -->
+				<div class="form-group">
+					<div class="no-aplica-mascara bloque21"></div>
+					<label class="col-md-7 control-label" for="radios"><span class="badge">E</span>{{ titulos.p21e | raw }}</label>
+					<div class="col-md-5">
+						{% for var in form.p21e %}
+							<label class="radio-inline" for="form_p21e_{{ loop.index - 1}}">
+								{{ form_widget(var, {'attr': {'class': 'radio-bloque21'}}) }}
+								<label for="form_p21e_{{ loop.index - 1 }}">&nbsp;</label>
+								<span>{{ loop.index }}</span>
+							</label>
+						{% endfor %}												
+					</div>
+				</div>
+			</div>
+			
+			<!-- BUTTON -->
+			<div class="form-block button-block">
+				<!-- Button (Double) -->
+				<div class="form-group" style="margin-bottom:0;">
+					<div class="col-xs-12 col-md-8 show-grid">
+						<button type="submit" id="button1id" name="button1id" class="col-xs-12 col-sm-12 btn btn-success btn-lg">Listo!</button>												
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<button type="reset" id="button2id" name="button2id" class="col-xs-12 col-sm-12 btn btn-danger" style="margin-top: 6px;">Borrar formulario</button>
+					</div>
+				</div>
+			</div>
+			{{ form_end(form) }}
+		</div>
+		<div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profile-tab">
+        	<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher videoro sint qui sapiente accusamus tattooed echo park.</p>
+		</div>
+	</div>
+
+{% endblock %}

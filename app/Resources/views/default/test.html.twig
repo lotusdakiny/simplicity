@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SIMPLICITY</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="css/init.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+
+{{ form_start(form1) }}
+{{ form_widget(form1) }}
+{{ form_end(form1) }}
+<br><br><br><br>
+{{ form_start(form2) }}
+{{ form_widget(form2) }}
+{{ form_end(form2) }}
+
+<button type="submit" id="button1id" name="button1id" onclick="submitAll();">Enviar formulario</button>
+
+<script>
+function submitAll(){
+    for(var i=0, n=document.forms.length; i<n; i++){
+        document.forms[i].submit();
+    }
+}
+</script>
+</body>

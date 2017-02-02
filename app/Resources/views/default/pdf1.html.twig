@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SIMPLICITY</title>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link rel="stylesheet" href="css/init.css">
+		<link rel="stylesheet" href="css/programer.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Styles -->
+		<style type="text/css">
+   			td, th { 
+    			font-size: 0.8em; 
+    			border: solid 1px gray;
+    			padding:10px;
+    			text-align:center;
+   			}   			
+   			th {
+   				font-weight:600;
+   			}   			
+   			p {
+   				font-size:0.9em;
+   			}
+   			
+   			span {
+   				text-align:center;
+   			}
+   			h6, h5, h3 {
+   				text-align:center;
+   			}
+  		</style>
+    </head>
+    <body>
+    	<img class="img-responsive" src="img/cabecera.jpg" alt="Logo SEFH" />
+    	<h3>Estimado/a Sr./Sra. Alonso<br> a continuaci&oacute;n puede encontrar un resumen de su cuestionario.</h3>
+    	<br><br><br><br><br><br><br><br><br><br>
+    	<p><strong>1.</strong> En su experiencia cl&iacute;nica valore la influencia de los siguientes factores en la adherencia al tratamiento con los nuevos AADs (Valore del 1 al 5 siendo 1 menos influyente y 5 m&aacute;s influyente):</p>   	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>1.A.</strong> Efectos adversos secundarios del tratamiento: <strong>{{ form.p1a }}</strong></p>	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>1.B.</strong> Duraci&oacute;n del tratamiento: <strong>{{ form.p1b }}</strong></p>			   				
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>1.C.</strong> N&uacute;mero de comprimidos: <strong>{{ form.p1c }}</strong></p>	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>1.D.</strong> Posolog&iacute;a: <strong>{{ form.p1d }}</strong></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>1.E.</strong> Polimedicaci&oacute;n: <strong>{{ form.p1e }}</strong></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>1.F.</strong> Factores psico-sociales del paciente: <strong>{{ form.p1f }}</strong>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(s&iacute;ntomas depresivos, adicci&oacute;n a drogas, problemas econ&oacute;micos...)</p>			  								
+	
+		<p><strong>2.</strong> De sus pacientes que no han alcanzado la curaci&oacute;n con los nuevos AADs, por favor, indique porcentualmente los motivos a los que ha sido debido:</p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.A.</strong> Recidiva: <strong>{{ form.p2a }}%</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.B.</strong> Breakthrough: <strong>{{ form.p2b }}%</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.</strong> Discontinuaci&oacute;n del tratamiento por efectos adversos: <strong>{{ form.p2c }}%</strong></p>
+			
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.a.</strong> Cefalea: <strong>{{ form.p2ca }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.b.</strong> Fatiga: <strong>{{ form.p2cb }}%</strong></p>				
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.c.</strong> Hiperbilirrubinemia: <strong>{{ form.p2cc }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.d.</strong> Elevaci&oacute;n ALT: <strong>{{ form.p2cd }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.e.</strong> Prurito: <strong>{{ form.p2ce }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.f.</strong> Anemia: <strong>{{ form.p2cf }}%</strong></p>
+				
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.C.g.</strong> Coinfectados con VIH: disminuci&oacute;n CD4 o fallo virol&oacute;gico del VIH: <strong>{{ form.p2cg }}%</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.D.</strong> Decisi&oacute;n de discontinuaci&oacute;n del tratamiento por el paciente: <strong>{{ form.p2d }}%</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>2.E.</strong> Discontinuaci&oacute;n de tratamiento debido a {{ form.p2texto }}: <strong>{{ form.p2e }}%</strong></p>							
+		
+		<img src="img/cabecera.jpg" alt="Logo SEFH" />
+	
+  		<p><strong>3.</strong> Valore cu&aacute;l de los siguientes colectivos de pacientes con hepatitis C cr&oacute;nica incumple m&aacute;s el tratamiento: 
+  		<br>&nbsp;&nbsp;&nbsp;(1 menos valorado y 5 m&aacute;s valorado)</p>
+	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.A.</strong> Coinfectados VIH y VHC: <strong>{{ form.p3a }}</strong></p>	
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.B.</strong> Alcoh&oacute;licos: <strong>{{ form.p3b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.C.</strong> Adictos a drogas i.v: <strong>{{ form.p3c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.D.</strong> Adictos a otras drogas de abuso: <strong>{{ form.p3d }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.E.</strong> Pacientes con enfermedad hep&aacute;tica poco avanzada (F0-F2): <strong>{{ form.p3e }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.F.</strong> Polimedicados: <strong>{{ form.p3f }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.G.</strong> Institucionalizados: <strong>{{ form.p3g }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.H.</strong> Con comorbilidad psiqui&aacute;trica: <strong>{{ form.p3h }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.I.</strong> Edad avanzada (>65 a&ntilde;os): <strong>{{ form.p3i }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.J.</strong> Pacientes sin recursos (indigentes): <strong>{{ form.p3j }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.K.</strong> Trabajadores del sexo: <strong>{{ form.p3k }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3.L.</strong> Otros colectivos MSM: <strong>{{ form.p3l }}</strong></p>
+		
+		<p><strong>4.</strong> Se&ntilde;ale con qu&eacute; frecuencia emplea los cuestionarios y escalas para medir la calidad de vida de los pacientes <br>
+		con hepatitis C cr&oacute;nica:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p4 }}</strong></p>
+		
+		<p><strong>5.</strong> Punt&uacute;e el grado de mejor&iacute;a en la calidad de vida observado en sus pacientes tratados con los nuevos AADs y que han alcanzado respuesta viral sostenida con enfermedad leve-moderada (1 no mejor&iacute;a, 5 m&aacute;xima mejor&iacute;a):</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p5 }}</strong></p>
+			
+		<p><strong>6.</strong> Punt&uacute;e el grado de mejor&iacute;a en la calidad de vida observado en sus pacientes tratados con los nuevos AADs y que han alcanzado respuesta viral sostenida con enfermedad avanzada (1 no mejor&iacute;a, 5 m&aacute;xima mejor&iacute;a):</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p6 }}</strong></p>
+			
+		<p><strong>7.</strong> &iquest;Qu&eacute; porcentaje de sus pacientes ha necesitado una baja laboral durante el tratamiento con los nuevos AADs?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p7 }}</strong></p>
+			
+		<p><strong>8.</strong> El presentismo laboral se define como la p&eacute;rdida de productividad en el propio trabajo como resultado de una enfermedad, &iquest;considera que ha mejorado con los nuevos AADs en pacientes con hepatitis C?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p8 }}</strong></p>
+		
+		<img src="img/cabecera.jpg" alt="Logo SEFH" />	
+		<p><strong>9.</strong> &iquest;Han precisado algunos pacientes en tratamiento con AADs atenci&oacute;n psiqui&aacute;trica o f&aacute;rmacos psicotr&oacute;picos?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p9 }}</strong></p>
+			
+		<p><strong>10.</strong> Respecto a la presencia de fatiga:</p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>10.A.</strong> &iquest;Qu&eacute; porcentaje de sus pacientes presentan fatiga antes de iniciar tratamiento con nuevos AADs?: <strong>{{ form.p10a }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>10.B.</strong> &iquest;Qu&eacute; porcentaje de sus pacientes con fatiga mejoran durante el tratamiento?: <strong>{{ form.p10b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>10.C.</strong> &iquest;Qu&eacute; porcentaje de sus pacientes con fatiga basal, presentan mejor&iacute;a tras alcanzar RVS12?: <strong>{{ form.p10c }}</strong></p>
+		
+		<p><strong>11.</strong> En base a su experiencia cl&iacute;nica, valore la mejor&iacute;a en la calidad de vida en cada uno de estos grupos de pacientes tras alcanzar RVS con los nuevos AADs: (1 no mejor&iacute;a, 5 m&aacute;xima mejor&iacute;a)</p>
+	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>11.A.</strong> Pacientes con cirrosis descompensada o en lista de espera para un trasplante hep&aacute;tico: <strong>{{ form.p11a }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>11.B.</strong> Pacientes con fibrosis avanzada F3-F4 pero sin enfermedad descompensada: <strong>{{ form.p11b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>11.C.</strong> Pacientes con fibrosis leve-moderada F0-F1 y F2: <strong>{{ form.p11c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>11.D.</strong> Pacientes con manifestaciones extrahep&aacute;ticas: <strong>{{ form.p11d }}</strong></p>
+	
+		<p><strong>12.</strong> &iquest;Cree usted posible eliminar el uso de ribavirina con las nuevas terapias con AADs?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p12 }}</strong></p>
+		<p><strong>13.</strong> Los nuevos AADs han simplificado el diagn&oacute;stico y la evaluaci&oacute;n de la hepatitis C cr&oacute;nica.</strong> Indique en qu&eacute; medida son necesarias las siguientes determinaciones antes del inicio de este tratamiento (1 no necesaria, 2 se puede considerar, 3 conveniente, 4 imprescindible)</p>
+	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.A.</strong> Determinaci&oacute;n de polimorfismos del gen de la interleuquina IL28B: <strong>{{ form.p13a }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.B.</strong> Fibroscan: <strong>{{ form.p13b }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.C.</strong> Ecograf&iacute;a abdominal: <strong>{{ form.p13c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.D.</strong> Determinaci&oacute;n del genotipo del VHC: <strong>{{ form.p13d }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.E.</strong> Ecograf&iacute;a abdominal: <strong>{{ form.p13e }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.F.</strong> Determinaci&oacute;n de la carga viral del VHC: <strong>{{ form.p13f }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.G.</strong> Determinaci&oacute;n de las RAVs basales por SMV o en fracaso: <strong>{{ form.p13g }}</strong></p>
+
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>13.H.</strong> Determinaci&oacute;n de la funci&oacute;n hep&aacute;tica: <strong>{{ form.p13h }}</strong></p>	
+	
+		<img src="img/cabecera.jpg" alt="Logo SEFH" />
+		<p><strong>14.</strong> &iquest;Cu&aacute;ntos de sus pacientes han abandonado la lista de espera de trasplante hep&aacute;tico tras recibir tratamiento con los nuevos AADs?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>{{ form.p14 }}</strong></p>
+		<p><strong>15.</strong> &iquest;Cu&aacute;ndo da el alta a los pacientes con fibrosis leve-moderada tratados con AADs?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p15 }}</strong></p>
+		<p><strong>16.</strong> En su experiencia cl&iacute;nica: &iquest;qu&eacute; porcentaje de pacientes monoinfectados que alcanzan RVS son dados de alta definitivamente de la consulta hospitalaria?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p16 }}</strong></p>
+		<p><strong>17.</strong> &iquest;Cu&aacute;l es el promedio de consultas a las que acude un paciente que recibe 12 semanas con nuevos AADs?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p17letra }}: {{ form.p17texto }}</strong></p>
+		<p><strong>18.</strong> &iquest;Y el promedio de consultas en el caso de una pauta de 8 semanas de tratamiento?:</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p18letra }}: {{ form.p18texto }}</strong></p>
+	  	<p><strong>19.</strong> Sobre los &uacute;ltimos 3 pacientes en los que ha iniciado tratamiento con AADs, indique el tiempo empleado (especificar minutos de dedicaci&oacute;n en cada apartado):</p>
+		<p><strong>Paciente 1</strong></p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 1.</strong> A.</strong> Duraci&oacute;n de la consulta: <strong>{{ form.p19p1a }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 1.</strong> B.</strong> Tiempo destinado a analizar el perfil del paciente para la elecci&oacute;n del tratamiento: <strong>{{ form.p19p1b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 1.</strong> C.</strong> Tiempo destinado a analizar las posibles interacciones farmacol&oacute;gica: <strong>{{ form.p19p1c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 1.</strong> D.</strong> Tiempo destinado por alguien de la Unidad a explicar al paciente o familiares c&oacute;mo tomar el r&eacute;gimen: <strong>{{ form.p19p1d }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 1.</strong> E.</strong> N&uacute;mero de comprimidos que contiene el r&eacute;gimen prescrito: <strong>{{ form.p19p1e }}</strong></p>
+	
+		<p><strong>Paciente 2</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 2.</strong> A.</strong> Duraci&oacute;n de la consulta: <strong>{{ form.p19p2a }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 2.</strong> B.</strong> Tiempo destinado a analizar el perfil del paciente para la elecci&oacute;n del tratamiento: <strong>{{ form.p19p2b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 2.</strong> C.</strong> Tiempo destinado a analizar las posibles interacciones farmacol&oacute;gicas: <strong>{{ form.p19p2c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 2.</strong> D.</strong> Tiempo destinado por alguien de la Unidad a explicar al paciente o familiares c&oacute;mo tomar el r&eacute;gimen: <strong>{{ form.p19p2d }}</strong></p>
+	<img src="img/cabecera.jpg" alt="Logo SEFH" />			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 2.</strong> E.</strong> N&uacute;mero de comprimidos que contiene el r&eacute;gimen prescrito: <strong>{{ form.p19p2e }}</strong></p>	
+
+		<p><strong>Paciente 3</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 3.</strong> A.</strong> Duraci&oacute;n de la consulta: <strong>{{ form.p19p3a }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 3.</strong> B.</strong> Tiempo destinado a analizar el perfil del paciente para la elecci&oacute;n del tratamiento: <strong>{{ form.p19p3b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 3.</strong> C.</strong> Tiempo destinado a analizar las posibles interacciones farmacol&oacute;gicas: <strong>{{ form.p19p3c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 3.</strong> D.</strong> Tiempo destinado por alguien de la Unidad a explicar al paciente o familiares c&oacute;mo tomar el r&eacute;gimen: <strong>{{ form.p19p3d }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>19.Paciente 3.</strong> E.</strong> N&uacute;mero de comprimidos que contiene el r&eacute;gimen prescrito: <strong>{{ form.p19p3e }}</strong></p>				
+	
+	<p><strong>20.</strong> Respecto al seguimiento de los pacientes con fibrosis avanzada o cirrosis que han alcanzado RVS tras tratamiento con los nuevos AADs.</strong> Se&ntilde;ale cu&aacute;l es su pr&aacute;ctica habitual:</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ form.p20 }}</strong>
+		
+  	<p><strong>21.</strong> Valore el beneficio de la simplificaci&oacute;n asociada a los nuevos tratamientos AADs en los siguientes aspectos (1 ning&uacute;n beneficio, 5 m&aacute;ximo beneficio)</p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>21.A.</strong> Manejo y abordaje del paciente: <strong>{{ form.p21a }}</strong></p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>21.B.</strong> Adherencia al tratamiento: <strong>{{ form.p21b }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>21.C.</strong> Calidad de vida de los pacientes: <strong>{{ form.p21c }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>21.D.</strong> Costes y recursos asistenciales: <strong>{{ form.p21d }}</strong></p>
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>21.E.</strong> Profesional sanitario: <strong>{{ form.p21e }}</strong></p>
+
+<img src="img/pie.jpg" alt="Logo SEFH" style="margin-top:100px;"/>
+    </body>
+</html>

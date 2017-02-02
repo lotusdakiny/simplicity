@@ -1,0 +1,37 @@
+AppBundle\Entity\Form1:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Form1Repository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        p1:
+            type: integer
+        userid:
+            type: integer
+            unique: true
+        p2:
+            type: integer
+        p3:
+            type: integer
+        p4:
+            type: integer
+        p5:
+            type: integer
+        p6:
+            type: integer
+        p7:
+            type: integer
+        p8:
+            type: integer
+        p9:
+            type: integer
+        p10:
+            type: integer
+        p11:
+            type: integer
+    lifecycleCallbacks: {  }

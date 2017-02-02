@@ -1,0 +1,11 @@
+{% extends '/email/emailbase.html.twig' %}
+
+{% block title %}Nueva contrase&ntilde;a{% endblock %}
+{% block body %}
+
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><spam>&iexcl;Ha cambiado tu contrase&ntilde;a!</spam></p>
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><spam>Tu contrase&ntilde;a ha sido modificada.</spam></p>
+		
+		<p style='line-height: 120%;font-size:0.9em;font-family:"Arial","sans-serif";'><strong>Usuario:</strong> {{ user }}<br><strong>Contrase&ntilde;a:</strong> {{ password }}</p>
+
+{% endblock %}

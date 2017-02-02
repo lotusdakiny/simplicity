@@ -2472,4 +2472,32 @@ class Form
     {
         return $this->p2texto1;
     }
+    /**
+     * @var integer
+     */
+    private $p2ch;
+
+
+    /**
+     * Set p2ch
+     *
+     * @param integer $p2ch
+     * @return Form
+     */
+    public function setP2ch($p2ch)
+    {
+        $this->p2ch = $p2ch;
+
+        return $this;
+    }
+
+    /**
+     * Get p2ch
+     *
+     * @return integer 
+     */
+    public function getP2ch()
+    {
+        return $this->p2ch;
+    }
 }

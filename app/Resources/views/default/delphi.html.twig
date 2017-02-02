@@ -1,0 +1,41 @@
+{# app/Resources/views/default/cuantitativo.html.twig #}
+{% extends '/default/cuestionariobase.html.twig' %}
+
+{% block body %}
+	<div class="well well-lg">
+		<p class="no-margin">Estimado Experto/a Nombre, si como consecuencia de su pr&aacute;ctica cl&iacute;nica no puede contestar alguna de las preguntas debido a que caen fuera de su competencia profesional, por favor, ind&iacute;quelo seleccionando la opci&oacute;n de "No aplica".</p>
+	</div>						
+	<ul class="nav nav-tabs" id="myTabs" role="tablist">
+		<li role="presentation" class="active"><h2 id="home-tab"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> CUESTIONARIO DELPHI</h2></li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab">
+			{{ form_start(form, {'attr': {'class': 'form-horizontal', 'id': 'form1'}}) }}
+		    {{ form_errors(form) }}
+		    
+			    {% include 'preguntas/delphiTemplate.html.twig' with {'titulo': titulos.1, 'numero': '1', 'form': form.p1, 'formporque': form.p1porque} %}
+			    
+			    {% include 'preguntas/delphiTemplate.html.twig' with {'titulo': titulos.2, 'numero': '2', 'form': form.p2, 'formporque': form.p2porque} %}
+			    
+			    {% include 'preguntas/delphiTemplate.html.twig' with {'titulo': titulos.3, 'numero': '3', 'form': form.p3, 'formporque': form.p3porque} %}
+		    																	
+			<!-- BUTTON -->
+			<div class="form-block button-block">
+				<!-- Button (Double) -->
+				<div class="form-group" style="margin-bottom:0;">
+					<div class="col-xs-12 col-md-8 show-grid">
+						<button type="submit" id="button1id" name="button1id" class="col-xs-12 col-sm-12 btn btn-success btn-lg">Listo!</button>												
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<button type="reset" id="button2id" name="button2id" class="col-xs-12 col-sm-12 btn btn-danger" style="margin-top: 6px;">Borrar formulario</button>
+					</div>
+				</div>
+			</div>
+			{{ form_end(form) }}
+		</div>
+		<div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profile-tab">
+        	<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher videoro sint qui sapiente accusamus tattooed echo park.</p>
+		</div>
+	</div>
+
+{% endblock %}

@@ -17,59 +17,38 @@ class Form1
     /**
      * @var int
      */
-    private $p1;
-
-    /**
-     * @var int
-     */
     private $userid;
 
     /**
-     * @var int
+     * @var string
+     */
+    private $p1;
+    
+    /**
+     * @var text
+     */
+    private $p1porque;
+    
+    /**
+     * @var string
      */
     private $p2;
-
+    
     /**
-     * @var int
+     * @var text
+     */
+    private $p2porque;
+    
+    /**
+     * @var string
      */
     private $p3;
-
+    
     /**
-     * @var int
+     * @var text
      */
-    private $p4;
-
-    /**
-     * @var int
-     */
-    private $p5;
-
-    /**
-     * @var int
-     */
-    private $p6;
-
-    /**
-     * @var int
-     */
-    private $p7;
-
-    /**
-     * @var int
-     */
-    private $p8;
-
-    /**
-     * @var int
-     */
-    private $p9;
-
-    /**
-     * @var int
-     */
-    private $p10;
-
-
+    private $p3porque;
+ 
     /**
      * Get id
      *
@@ -78,29 +57,6 @@ class Form1
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set p1
-     *
-     * @param integer $p1
-     * @return Form1
-     */
-    public function setP1($p1)
-    {
-        $this->p1 = $p1;
-
-        return $this;
-    }
-
-    /**
-     * Get p1
-     *
-     * @return integer 
-     */
-    public function getP1()
-    {
-        return $this->p1;
     }
 
     /**
@@ -127,9 +83,55 @@ class Form1
     }
 
     /**
+     * Set p1
+     *
+     * @param string $p1
+     * @return Form1
+     */
+    public function setP1($p1)
+    {
+        $this->p1 = $p1;
+
+        return $this;
+    }
+
+    /**
+     * Get p1
+     *
+     * @return string 
+     */
+    public function getP1()
+    {
+        return $this->p1;
+    }
+
+    /**
+     * Set p1porque
+     *
+     * @param string $p1porque
+     * @return Form1
+     */
+    public function setP1porque($p1porque)
+    {
+        $this->p1porque = $p1porque;
+
+        return $this;
+    }
+
+    /**
+     * Get p1porque
+     *
+     * @return string 
+     */
+    public function getP1porque()
+    {
+        return $this->p1porque;
+    }
+
+    /**
      * Set p2
      *
-     * @param integer $p2
+     * @param string $p2
      * @return Form1
      */
     public function setP2($p2)
@@ -142,7 +144,7 @@ class Form1
     /**
      * Get p2
      *
-     * @return integer 
+     * @return string 
      */
     public function getP2()
     {
@@ -150,9 +152,32 @@ class Form1
     }
 
     /**
+     * Set p2porque
+     *
+     * @param string $p2porque
+     * @return Form1
+     */
+    public function setP2porque($p2porque)
+    {
+        $this->p2porque = $p2porque;
+
+        return $this;
+    }
+
+    /**
+     * Get p2porque
+     *
+     * @return string 
+     */
+    public function getP2porque()
+    {
+        return $this->p2porque;
+    }
+
+    /**
      * Set p3
      *
-     * @param integer $p3
+     * @param string $p3
      * @return Form1
      */
     public function setP3($p3)
@@ -165,7 +190,7 @@ class Form1
     /**
      * Get p3
      *
-     * @return integer 
+     * @return string 
      */
     public function getP3()
     {
@@ -173,191 +198,25 @@ class Form1
     }
 
     /**
-     * Set p4
+     * Set p3porque
      *
-     * @param integer $p4
+     * @param string $p3porque
      * @return Form1
      */
-    public function setP4($p4)
+    public function setP3porque($p3porque)
     {
-        $this->p4 = $p4;
+        $this->p3porque = $p3porque;
 
         return $this;
     }
 
     /**
-     * Get p4
+     * Get p3porque
      *
-     * @return integer 
+     * @return string 
      */
-    public function getP4()
+    public function getP3porque()
     {
-        return $this->p4;
-    }
-
-    /**
-     * Set p5
-     *
-     * @param integer $p5
-     * @return Form1
-     */
-    public function setP5($p5)
-    {
-        $this->p5 = $p5;
-
-        return $this;
-    }
-
-    /**
-     * Get p5
-     *
-     * @return integer 
-     */
-    public function getP5()
-    {
-        return $this->p5;
-    }
-
-    /**
-     * Set p6
-     *
-     * @param integer $p6
-     * @return Form1
-     */
-    public function setP6($p6)
-    {
-        $this->p6 = $p6;
-
-        return $this;
-    }
-
-    /**
-     * Get p6
-     *
-     * @return integer 
-     */
-    public function getP6()
-    {
-        return $this->p6;
-    }
-
-    /**
-     * Set p7
-     *
-     * @param integer $p7
-     * @return Form1
-     */
-    public function setP7($p7)
-    {
-        $this->p7 = $p7;
-
-        return $this;
-    }
-
-    /**
-     * Get p7
-     *
-     * @return integer 
-     */
-    public function getP7()
-    {
-        return $this->p7;
-    }
-
-    /**
-     * Set p8
-     *
-     * @param integer $p8
-     * @return Form1
-     */
-    public function setP8($p8)
-    {
-        $this->p8 = $p8;
-
-        return $this;
-    }
-
-    /**
-     * Get p8
-     *
-     * @return integer 
-     */
-    public function getP8()
-    {
-        return $this->p8;
-    }
-
-    /**
-     * Set p9
-     *
-     * @param integer $p9
-     * @return Form1
-     */
-    public function setP9($p9)
-    {
-        $this->p9 = $p9;
-
-        return $this;
-    }
-
-    /**
-     * Get p9
-     *
-     * @return integer 
-     */
-    public function getP9()
-    {
-        return $this->p9;
-    }
-
-    /**
-     * Set p10
-     *
-     * @param integer $p10
-     * @return Form1
-     */
-    public function setP10($p10)
-    {
-        $this->p10 = $p10;
-
-        return $this;
-    }
-
-    /**
-     * Get p10
-     *
-     * @return integer 
-     */
-    public function getP10()
-    {
-        return $this->p10;
-    }
-    /**
-     * @var integer
-     */
-    private $p11;
-
-
-    /**
-     * Set p11
-     *
-     * @param integer $p11
-     * @return Form1
-     */
-    public function setP11($p11)
-    {
-        $this->p11 = $p11;
-
-        return $this;
-    }
-
-    /**
-     * Get p11
-     *
-     * @return integer 
-     */
-    public function getP11()
-    {
-        return $this->p11;
+        return $this->p3porque;
     }
 }

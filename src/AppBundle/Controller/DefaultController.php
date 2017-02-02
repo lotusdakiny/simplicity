@@ -35,7 +35,7 @@ class DefaultController extends Controller
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 		
 		$enabled1 = true;
-		$enabled2 = false;
+		$enabled2 = true;
 		
 		// suppose that the cuestionarios are not disponible
 		$button1 = utf8_encode("<a href='/#' class='btn btn-lg btn-block btn-sample dis' style='margin:20px 0;' data-toggle='modal' data-target='#ModalCuantitativo'><i class='fa fa-minus-circle' aria-hidden='true'></i> CUESTIONARIO CUANTITATIVO</a>");
@@ -46,10 +46,15 @@ class DefaultController extends Controller
 		//working with DB
 		$em = $this->getDoctrine()->getManager();
 		
-		//If user already has filled CUESTIONARIO CUANTITATIVO in table
+		//If user already has filled CUESTIONARIO CUANTITATIVO
 		$isUserCuantitativoInDB = $this->getDoctrine()
 		->getRepository('AppBundle:Form')
 		->findOneBy(array('userid' => $user->getForm1()));
+		
+		//If user already has filled CUESTIONARIO Delphi
+		$isUserDelphiInDB = $this->getDoctrine()
+		->getRepository('AppBundle:Form')
+		->findOneBy(array('userid' => $user->getForm2()));
 		
 		//if the cuestionario1 is enabled and user can edit it
 		if ((!($isUserCuantitativoInDB))&&$enabled1) {
@@ -62,11 +67,11 @@ class DefaultController extends Controller
 		}
 
 		//if the cuestionario2 is enabled and user can edit it
-		if (($user->getForm2())&&$enabled2) {
+		if ((!($isUserDelphiInDB))&&$enabled2) {
 			$button2 = utf8_encode("<a href='cualitativo' class='btn btn-lg btn-block btn-sample' style='margin:20px 0;'>CUESTIONARIO DELPHI</a>");
 		}
 		//if the cuestionario2 is enabled but user cann't edit it
-		elseif (!($user->getForm2())&&$enabled2) {
+		elseif (($isUserDelphiInDB)&&$enabled2) {
 			$message2 = utf8_encode("este cuestionario ya ha sido completado y enviado para su an�lisis");
 		}
 		
@@ -210,7 +215,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/guardar-cualitativo")
+     * @Route("/guardar-delphi")
      */
     public function guardarCualitativoAction()
     {

@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use AppBundle\Entity\Form;
 use AppBundle\Entity\Form1;
 use AppBundle\Entity\Datas;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 //https://knpuniversity.com/screencast/guard/error-messages - how to translate error messages
 //symfony/src/Symfony/Component/Security/Core/Exception/UsernameNotFoundException.php
@@ -281,18 +282,12 @@ class FormController extends Controller
     	 
     	// create a form
     	$form = $this->createFormBuilder($formobject)
-    	//pregunta1
-    	->add('p1', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p2', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p3', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p4', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p5', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p6', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p7', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p8', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p9', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p10', ChoiceType::class, $datas->getChoices_1_5())
-    	->add('p11', ChoiceType::class, $datas->getChoices_1_5())
+    	->add('p1', ChoiceType::class, $datas->getChoices_si_no_delphi())
+    	->add('p2', ChoiceType::class, $datas->getChoices_si_no_delphi())
+    	->add('p3', ChoiceType::class, $datas->getChoices_si_no_delphi())
+    	->add('p1porque', TextareaType::class)
+    	->add('p2porque', TextareaType::class)
+    	->add('p3porque', TextareaType::class)
     	->getForm();
     	 
     	$form->handleRequest($request);
@@ -327,15 +322,16 @@ class FormController extends Controller
     		$em->flush();
     		 
     		return $this->render('default/verificar2.html.twig', array(
-    				'formobject' => var_dump($formobject),
+    				'form' => $formobject,
     				'username' => $user->getNombre(),
+    				'titulos' => $datas->getTitulos_f2(),
     		));
     	}
     	 
-    	return $this->render('default/cualitativo.html.twig', array(
+    	return $this->render('default/delphi.html.twig', array(
     			'form' => $form->createView(),
     			'username' => $user->getNombre(),
-    			'titulos' => $datas->getTitulos(),
+    			'titulos' => $datas->getTitulos_f2(),
     	));
     }
     

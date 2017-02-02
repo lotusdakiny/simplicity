@@ -316,6 +316,17 @@ class Datas
 		return $especialidad;
 	}
 	
+	public function getChoices_si_no_delphi()
+	{
+		$choices = array('choices' => array(
+				utf8_encode('Sí') => utf8_encode('Sí'),
+				'No' => 'No',
+		), 'multiple'=>false, 'expanded'=>true
+		);
+	
+		return $choices;
+	}
+	
 	public function getEmail()
 	{
 		$email = array(

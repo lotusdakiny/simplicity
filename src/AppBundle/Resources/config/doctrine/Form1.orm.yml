@@ -9,29 +9,22 @@ AppBundle\Entity\Form1:
             generator:
                 strategy: AUTO
     fields:
-        p1:
-            type: integer
         userid:
             type: integer
             unique: true
+        p1:
+            type: string
+            length: 2
+        p1porque:
+            type: text
         p2:
-            type: integer
+            type: string
+            length: 2
+        p2porque:
+            type: text
         p3:
-            type: integer
-        p4:
-            type: integer
-        p5:
-            type: integer
-        p6:
-            type: integer
-        p7:
-            type: integer
-        p8:
-            type: integer
-        p9:
-            type: integer
-        p10:
-            type: integer
-        p11:
-            type: integer
+            type: string
+            length: 2
+        p3porque:
+            type: text          
     lifecycleCallbacks: {  }
